@@ -19,15 +19,14 @@ class MCP3008callback{
 
 class MCP3008{
 	public:
-		MCP3008();
-		~MCP3008() {
+		MCP3008(); //class constructor
+		~MCP3008() { //class destructor
 			stop();
 		}
-		void set_channel(uint8_t channel);
-		//void read_data();
-		void setCallBack(MCP3008callback* cb);
-		void start();
-		void stop();
+		void set_channel(uint8_t channel); //set channel of ADC from 0 to 7
+		void setCallBack(MCP3008callback* cb); //function that allows to threads to set callbacks
+		void start(); //start threads
+		void stop(); //stop threads
 	private:
 		uint8_t adc_channel;
 		MCP3008callback* mcp3008callback = NULL;
