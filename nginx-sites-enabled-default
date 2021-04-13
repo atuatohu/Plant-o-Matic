@@ -8,10 +8,15 @@ server {
           log_not_found  off;
         } 
 
-        location /sensor/ {
+        location /soil/ {
           include        fastcgi_params;
           fastcgi_pass   unix:/tmp/sensorsocket;
         }
+	
+	location /dht/ {
+	  include        fastcgi_params;
+	  fastcgi_pass   unix:/tmp/dht11socket;
+	}
 
         location / {
 	  root /var/www/html;

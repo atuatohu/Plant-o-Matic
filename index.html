@@ -15,54 +15,90 @@
 
 	<script type="text/javascript">
 	  var maxSamples = 60;
-	  var jsonServerPath = "/sensor/:80";
-	  var data = [];
-	  var g;
-	  var jsonData4Server = {
-	      soilmoisture: 20,
+	  var jsonSoilServerPath = "/soil/:80";
+	  var jsonDHTServerPath = "/dht/:80";
+	  var soil = [];
+	  var temp = [];
+	  var s;
+	  var t;
+	  var jsonDataSoil4Server = {
+	      soilmoisture: 1000,
 	      steps: 100,
 	      hello: "Hello, that's a test!"
 	  };
-
+	  var jsonDataDHT4Server = {
+		  temperature: 20,
+		  steps: 100,
+		  hello: "Hello"
+	  };
 	  // getJSON callback with the JSON data in "result"
-	  function updatePlot(result) {
+	  function soilPlot(result) {
 	      var utcSeconds = result.epoch;
 	      var d = new Date(0);
 	      d.setUTCSeconds(utcSeconds);
 	      var x = d;
 	      var y = result.soilmoisture;
               document.getElementById("soilmoisture").innerHTML = Math.round(y * 100) / 100;
-	      if (data.length > maxSamples) {
-		  data.shift();
+	      if (soil.length > maxSamples) {
+			soil.shift();
 	      }
-	      data.push([x, y]);
-	      g.updateOptions( { 'file': data } );
+	      soil.push([x, y]);
+	      g.updateOptions( { 'file': soil } );
+	  }
+	  function temperaturePlot(result) {
+	      var utcSeconds = result.epoch;
+	      var d = new Date(0);
+	      d.setUTCSeconds(utcSeconds);
+	      var x = d;
+	      var y = result.temperature;
+              document.getElementById("temperature").innerHTML = Math.round(y * 100) / 100;
+	      if (temp.length > maxSamples) {
+			temp.shift();
+	      }
+	      console.log(x);
+	      temp.push([x, y]);
+	      t.updateOptions( { 'file': temp } );
 	  }
 
 	  // timer callback to get the JSON data from the webserver
-	  function getJSONfromServer() {
-	      $.getJSON(jsonServerPath,updatePlot);
+	  function getSoilJSONfromServer() {
+		  $.getJSON(jsonSoilServerPath, soilPlot);
+	  }
+	  function getDHTJSONfromServer(){
+			$.getJSON(jsonDHTServerPath,temperaturePlot);
 	  }
 
 	  // send a JSON packet to the server
-	  function sendJSON2server() {
-	      $.post(jsonServerPath,jsonData4Server);
+	  function sendSoilJSON2server() {
+	      $.post(jsonServerPath,jsonSoilData4Server);
+	  }
+	  function sendDHTJSON2server(){
+	      $.post(jsonDHTServerPath,jsonDHTData4Server); 
 	  }
 
 	  // callback after the document has been loaded
 	  function onDocReady() {
-	      g = new Dygraph(document.getElementById("div_g"), data,
+	      g = new Dygraph(document.getElementById("div_g"), soil,
 			      {
 				  drawPoints: true,
 				  labels: ['Time', 'Soil moisture'],
 			      });
-	      
-	      window.intervalId = setInterval(getJSONfromServer,1000);
-	      $("#sendback").click(sendJSON2server);
+	      window.intervalId = setInterval(getSoilJSONfromServer,1000);
+	      $("#sendback").click(sendSoilJSON2server);
+	  }
+	  function onDocReady2(){
+		  t = new Dygraph(document.getElementById("div_t"), temp,
+			      {
+				  drawPoints: true,
+				  labels: ['Time', 'Temperature'],
+			      });
+	      window.intervalId = setInterval(getDHTJSONfromServer,1000);
+	      $("#sendback2").click(sendDHTJSON2server);
 	  }
 
 	  // register callback to call it after the website has been set up
 	  $(document).ready(onDocReady);
+	  $(document).ready(onDocReady2);
 	</script>
 	
     </head>
@@ -70,20 +106,21 @@
       <h2>Realtime data plot with JSON data transfer</h2>
 
       <h3><span id="soilmoisture">00</span> % </h3>
-
+      <h3><span id="temperature">00</span> degree Celcius </h3>
 	<p>This is a realtime demo where the java script requests the data
 	  and then appends it to the plot every second.</p>
 	
 	<div id="div_g" style="width:600px; height:300px;"></div>
-	
+	<div id="div_t" style="width:600px; height:300px;"></div>
 	<br />
 	<br />
 <br />
 <br />
 <input type = "button" id = "sendback" value = "Force constant 20C" />
+<input type = "button" id = "sendback2" value = "Force constant 20C" />
 <br />
 <br />
-<p><a href="/data/">JSON data</a></p>
+<p><a href="/sensor/">JSON data</a></p>
 <br />
 <br />
 <br />
