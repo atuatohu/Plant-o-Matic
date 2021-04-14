@@ -10,14 +10,18 @@ server {
 
         location /soil/ {
           include        fastcgi_params;
-          fastcgi_pass   unix:/tmp/sensorsocket;
+          fastcgi_pass   unix:/tmp/soilsocket;
         }
 	
-	location /dht/ {
+	location /temperature/ {
 	  include        fastcgi_params;
-	  fastcgi_pass   unix:/tmp/dht11socket;
+	  fastcgi_pass   unix:/tmp/tempsocket;
 	}
-
+	
+	location /humidity/ {
+	  include       fastcgi_params;
+	  fastcgi_pass  unix:/tmp/humsocket;
+	}
         location / {
 	  root /var/www/html;
           index index.html;

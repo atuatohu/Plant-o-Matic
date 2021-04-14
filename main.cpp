@@ -74,11 +74,11 @@ class DHT11SampleCallBack:public DHT11callback{
 	//call back function that calculates humidity and temperature
 	//from bits
 public:
-	float humidity;
-	float temperature;
+	float humidity,temperature;
 	long t; 
-	float forceTemp;
+	float forceTemp, forcedHum;
 	int forcedCounter = 0;
+	int forcedCounter2 = 0;
 	virtual void hasSample(int *data){
 		humidity = (float) ((data[0] << 8) + data[1]) / 10.0;
 		if (humidity > 100) humidity = data[0];
@@ -92,6 +92,10 @@ public:
 	void forceTemperature(float temp, int step){
 		forceTemp = temp;
 		forcedCounter = step;
+	}
+	void forceHum(float hum, int step){
+		forcedHum = hum;
+		forcedCounter2 = step;
 	}
 };
 
@@ -125,7 +129,20 @@ public:
 		return jsonGenerator.getJSON();
 	}
 };
-
+class JSONDHT11CallbackHum : public JSONCGIHandler::GETCallback{
+private:
+	DHT11SampleCallBack* dht11;
+public:
+	JSONDHT11CallbackHum(DHT11SampleCallBack* cb){
+		dht11 = cb;
+	}
+	virtual std::string getJSONString(){
+		JSONCGIHandler::JSONGenerator jsonGenerator;
+		jsonGenerator.add("epoch",(long)time(NULL));
+		jsonGenerator.add("humidity",dht11->humidity);
+		return jsonGenerator.getJSON();
+	}
+};
 class MCP3008POSTCalback : public JSONCGIHandler::POSTCallback{
 public:
 	MCP3008POSTCalback(SoilSensorSampleCallBack* s){
@@ -155,35 +172,28 @@ public:
 		dht11->forceTemperature(temperature, steps);
 	}
 };
+class DHT11PostCallbackHum : public JSONCGIHandler::POSTCallback{
+public:
+	DHT11SampleCallBack* dht11;
+	DHT11PostCallbackHum(DHT11SampleCallBack* cb){
+		dht11 = cb;
+	};
+	virtual void postString(std::string postArg){
+		auto m = JSONCGIHandler::postDecoder(postArg);
+		int humidity = atof(m["humidity"].c_str());
+		int steps = atoi(m["steps"].c_str());
+		std::cerr << m["hello"] << "\n";
+		dht11->forceHum(humidity, steps);
+	}
+};
 
 int main(int argc, char *argv[]){
         if ( wiringPiSetup() == -1 )
 		exit( 1 );
-	/*
-        MCP3008* soil_sensor = new MCP3008();
-        MCP3008* water_level_sensor = new MCP3008();
-        SoilSensorSampleCallBack print1;
-        WaterLevelSensorSampleCallBack print2;
-        uint8_t soil_channel = 0;
-        uint8_t water_channel = 2;
-        soil_sensor->set_channel(soil_channel);
-        water_level_sensor->set_channel(water_channel);
-        soil_sensor->setCallBack(&print1);
-        water_level_sensor->setCallBack(&print2);
-        dht11->setCallBack(&cb);
-        soil_sensor->start();
-        water_level_sensor->start();
-        dht11->start();
-        getchar();
-        soil_sensor->stop();
-        water_level_sensor->stop();
-        dht11->stop();
-        delete soil_sensor;
-        delete water_level_sensor;
-        delete dht11;*/
 	int pin = 7;
 	DHT11* dht11 = new DHT11(pin);
 	DHT11SampleCallBack cb;
+	//DHT11SampleCallBack cb2;
 	MCP3008* soil_sensor = new MCP3008();
 	SoilSensorSampleCallBack print1;
 	uint8_t soil_channel = 0;
@@ -192,10 +202,13 @@ int main(int argc, char *argv[]){
 	dht11->setCallBack(&cb);
 	JSONCGIMCP3008Callback jc(&print1);
 	MCP3008POSTCalback mcppost(&print1);
-	JSONCGIHandler* fastcgi = new JSONCGIHandler(&jc, &mcppost, "/tmp/sensorsocket");
+	JSONCGIHandler* fastcgi = new JSONCGIHandler(&jc, &mcppost, "/tmp/soilsocket");
 	JSONDHT11CallbackTemp jcdht(&cb);
 	DHT11PostCallbackTemp tempPost(&cb);
-	JSONCGIHandler* fastcgidht = new JSONCGIHandler(&jcdht, &tempPost, "/tmp/dht11socket");
+	JSONCGIHandler* fastcgidht = new JSONCGIHandler(&jcdht, &tempPost, "/tmp/tempsocket");
+	JSONDHT11CallbackHum humdht(&cb);
+	DHT11PostCallbackHum humPost(&cb);
+	JSONCGIHandler* fastcgihum = new JSONCGIHandler(&humdht, &humPost, "/tmp/humsocket");
 	soil_sensor->start();
 	dht11->start();
 	setHUPHandler();
@@ -205,9 +218,12 @@ int main(int argc, char *argv[]){
 	while (mainRunning) sleep(1);
 
 	fprintf(stderr,"'%s' shutting down.\n",argv[0]);
+	dht11->stop();
+	soil_sensor->stop();
 	delete soil_sensor;
 	delete dht11;
 	delete fastcgidht;
+	delete fastcgihum;
 	delete fastcgi;
     return 0;
 }
