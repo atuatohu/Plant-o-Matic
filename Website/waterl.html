@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html>
-    <head>
-	<title>Welcome to the Realtime Embedded Test server</title>
-	<style>
-	 body {
-             width: 35em;
-             margin: 0 auto;
-             font-family: Tahoma, Verdana, Arial, sans-serif;
-	 }
-	</style>
+<html lang="eng">
+<head>
+<meta charset="utf-8">
+	<meta name="keywords" content="Plant">
+	<meta name="description" content="Plant-o-Matic v1.0">
+	<title class="section-title">Plant-o-Matic v1.0</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css" />
-
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css"/>
+	<link rel="stylesheet" href="style-themes.css">
 	<script type="text/javascript">
 	  var maxSamples = 60;
 	  var jsonSoilServerPath = "/soil/:80";
@@ -136,12 +132,17 @@
 	  $(document).ready(onDocReady3);
 	</script>
 	
-    </head>
+</head>
     <body>
-      <h2>Realtime data plot with JSON data transfer</h2>
-
+    	<h1>Plant-o-Matic</h1>
+    	<div class="topnav">
+		  	<a href="soilm.html">Soil Moisture</a>
+		  	<a class="active" href="/waterl.html">Water Level</a>
+		  	<a href="/temp.html">Temperature</a>
+		  	<a href="/hum.html">Humidity</a>
+		</div>
       <h3><span id="soilmoisture">00</span> % </h3>
-      <h3><span id="temperature">00</span> degree Celcius </h3>
+      <h3><span id="temperature">00</span> degree Celsius </h3>
       <h3><span id="humidity">00</span> % </h3>
 	<p>This is a realtime demo where the java script requests the data
 	  and then appends it to the plot every second.</p>
@@ -153,8 +154,9 @@
 	<br />
 <br />
 <br />
-<input type = "button" id = "sendback" value = "Force constant 20C" />
-<input type = "button" id = "sendback2" value = "Force constant 20C" />
+<p> Water Pump Manual Control</p>
+<input type = "button" id = "sendback" value = "Pump ON" />
+<input type = "button" id = "sendback2" value = "Pump OFF" />
 <br />
 <br />
 <p><a href="/sensor/">JSON data</a></p>
@@ -180,8 +182,5 @@
 <br />
 <br />
 <br />
-
-<p><a href="textonly.html">Text only version</a></p>
-	
     </body>
 </html>
