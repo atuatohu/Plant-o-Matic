@@ -1,4 +1,3 @@
-КАРТИНКА
 
 # Plant-o-Matic
 
