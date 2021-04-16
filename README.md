@@ -1,8 +1,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/atuatohu/Plant-o-Matic/blob/main/Materials/product_logo.PNG">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/atuatohu/Plant-o-Matic">
+    <img src="https://github.com/atuatohu/Plant-o-Matic/blob/main/Materials/product_logo.PNG" alt="Logo" width="80" height="80">
   </a>
 
   <h2 align="center">Plant-o-Matic</h2>
