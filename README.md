@@ -5,7 +5,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Plant-o-Matic</h3>
+  <h2 align="center">Plant-o-Matic</h2>
 
   <p align="center">
     Automated plant care and monitoring system using Raspberry Pi Model 3 B+
