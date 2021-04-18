@@ -8,10 +8,14 @@
 #include <wiringPiSPI.h>
 #include <math.h>
 #include <time.h>
+#include <mutex>
 #include <thread>
 #include "ultrasonic.h"
 #include "MCP3008.h"
 #include "DHT11.h"
+
+volatile int soil, level;
+std::mutex mtx;
 
 class UltraSonicSensorSampleCallback:public UltrasonicCallback{
 public:
@@ -39,15 +43,30 @@ public:
 	int currentMoist;
 	virtual void hasSample(int s){
 		currentMoist = (s * 100) / 980;
+		soil = currentMoist;
 		printf("soil = %d\n",currentMoist);
 	}
 };
 
+void onoff(){
+	const int relay = 0;
+	pinMode(relay, OUTPUT);
+	while(true){
+		if(soil > 70){
+			mtx.lock();
+			digitalWrite(relay, 1);
+			mtx.unlock();
+		}else{
+			digitalWrite(relay, 0);
+		}
+	}
+	
+}
 
 int main(){
 	if ( wiringPiSetup() == -1 )
 		exit( 1 );
-	const int pin = 2;
+	const int pin = 7;
 	const int trig = 4;
 	const int echo = 5;
 	DHT11* dht11 = new DHT11(pin);
@@ -62,7 +81,10 @@ int main(){
 	UltraSonicSensorSampleCallback cb2;
 	
 	ultra->setCallBack(&cb2);
+	soil_sensor->start();
+	dht11->start();
 	ultra->start();
+	onoff();
 	getchar();
 	ultra->stop();
 	dht11->stop();
