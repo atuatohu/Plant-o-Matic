@@ -29,38 +29,32 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
+      <a href="#about">About</a>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
+      <a href="#hardware">Hardware</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#software">Software</a></li>
+    <li><a href="#how-to-start">How to Start</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#references">References</a></li>
   </ol>
 </details>
 
 ## About
 
-Plant care and monitoring system implemented on Raspberry Pi Model 3 B+
+**Plant-o-Matic** is an automated plant care and monitoring system implemented on Raspberry Pi Model 3 B+ with the help of C++, nginx and FastCGI.
 
-For some people plants are parts of their families and taking care of their plant is as crucial as for other people to take care of their pets.
+For some people plants are parts of their families and taking care of their plant is as crucial as for other people to take care of their pets. For others, they are something they keep forgetting about because of the busy schedule or heaps of thoughts.
 
-This project was created for those who want not just to grow a plant, but also monitor it's state and other related data.
-
-Project was implemented using [Example](https://www.google.com/maps).
+If you belong to the latter category, this project is for you! With it's help, it is possible not just to grow a plant, but also monitor it's state and other related data.
 
 ## Hardware
+
+* [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
 
 ## Software
 
@@ -94,7 +88,7 @@ Distributed under the MIT License. See [LICENSE](https://github.com/atuatohu/Pla
 
 Project Link: [https://github.com/atuatohu/Plant-o-Matic](https://github.com/atuatohu/Plant-o-Matic)
 
-<!-- ACKNOWLEDGEMENTS -->
+<!-- REFERENCES -->
 ## References
 * [README Template](https://github.com/othneildrew/Best-README-Template) 
 
