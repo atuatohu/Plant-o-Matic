@@ -7,18 +7,19 @@ include_directories(.)
 include_directories(src)
 include_directories(test)
 
-
+find_package (Threads)
+find_package( CURL )
 find_library(wiringPi_LIB wiringPi)
 
 
-add_executable(Plant src/demo.cpp src/ultrasonic.cpp src/MCP3008.cpp src/DHT11.cpp)
+add_executable(Plant src/main.cpp src/ultrasonic.cpp src/MCP3008.cpp src/DHT11.cpp src/pump.cpp)
 add_executable(unit_test_ultra test/ultra_test.cpp src/ultrasonic.cpp)
 add_executable(unit_test_soil test/soil_test.cpp src/MCP3008.cpp)
 add_executable(unit_test_pump test/soil_pump_test.cpp src/MCP3008.cpp)
 add_executable(unit_test_low test/ultra_pump_test.cpp src/ultrasonic.cpp)
 add_executable(unit_test_dht test/dht_test.cpp src/DHT11.cpp)
 
-TARGET_LINK_LIBRARIES(Plant ${wiringPi_LIB})
+TARGET_LINK_LIBRARIES(Plant ${wiringPi_LIB} rt fcgi++ fcgi ${CMAKE_THREAD_LIBS_INIT} curl)
 
 TARGET_LINK_LIBRARIES(unit_test_ultra ${wiringPi_LIB})
 TARGET_LINK_LIBRARIES(unit_test_soil ${wiringPi_LIB})
