@@ -2,6 +2,7 @@
 #include "global_variables.h"
 #include "soil_callback.cpp"
 #include "ultrasonic_callback.cpp"
+#include "treshhold.h"
 
 pump::pump(int relay){
 	setPin(relay);
@@ -15,25 +16,15 @@ void pump::setCallback(pumpCallback* p){
 		pcb = p;
 }
 void pump::onoff(){
-		/*if((soil > 70 || on_off == "on") && level > 5){
-			//digitalWrite(relay, 1);
-			state = "on";
-		}
-		if(on_off == "off"){
-			digitalWrite(relay, 0);
-		}*/
-		if(soil > 70 && level > 9 ) digitalWrite(relay, 1);
+
+		if(soil > MAXSOILDRY && level > MINWATERLEVEL ) digitalWrite(relay, 1);
 		else digitalWrite(relay, 0);
 }
 
 void pump::run(pump* p){
 	p->running = 1;
-	//pinMode(p->relay, OUTPUT);
 	while(p->running){
 		p->onoff();
-		/*if(p->pcb){
-			p->pcb->hasState(p->state);
-		}*/
 	}
 }
 void pump::start(){
