@@ -18,7 +18,9 @@
     <a href="https://github.com/atuatohu/Plant-o-Matic/issues">Report Bug or Request a Feature</a>
   </p>
   <p align="center">
+  <a href="https://www.youtube.com/watch?v=Qye0ZrwYpE0">
     <img src="https://github.com/atuatohu/Plant-o-Matic/blob/main/Materials/svg_logos/YouTube.svg" width="45">&nbsp;&nbsp;&nbsp;
+  </a>
     <img src="https://github.com/atuatohu/Plant-o-Matic/blob/main/Materials/svg_logos/Twitter.svg" width="45">&nbsp;&nbsp;&nbsp;
     <img src="https://github.com/atuatohu/Plant-o-Matic/blob/main/Materials/svg_logos/Instagram.svg" width="45">&nbsp;&nbsp;&nbsp;
   </p>
