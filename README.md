@@ -95,6 +95,9 @@ For this project, we've collected this information for each device. You can chec
   &nbsp;&nbsp;&nbsp;<img src="https://www.tracopower.com/sites/default/files/styles/product_detail/public/products/pictures/tra1_mainpicture.jpeg?itok=h67IPxCM" alt="tra 1-0512" width="190" height="190">
 </a>
 
+The interconnection diagram:
+<img src="https://github.com/atuatohu/Plant-o-Matic/blob/main/Materials/Hardware/Connection%20diagram/general_overview.png">
+
 ## How to Start
 
 Before downloading the project, check if the following prerequisites are present on your Raspberry Pi:
