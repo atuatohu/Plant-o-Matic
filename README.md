@@ -51,7 +51,7 @@ Data monitoring is done in a web application, which is hosted on the Raspberry P
 ## Hardware
 
 Before purchasing any device and starting to work with it, it is important to check its datasheet/manual.
-For this project, we've collected this information for each device. You can check it in the [Hardware]() folder.
+For this project, we've collected this information for each device. You can check it in the [Hardware](https://github.com/atuatohu/Plant-o-Matic/tree/main/Materials/Hardware) folder.
 
 * [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
 
