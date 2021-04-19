@@ -21,6 +21,7 @@ public:
 	}
 	void setPin(int p);
 	void start();
+	void stop();
 private:
 	std::string state;
 	static void run(pump* p);

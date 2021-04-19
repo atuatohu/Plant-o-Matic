@@ -12,12 +12,10 @@ pump::pump(int relay){
 void pump::setPin(int p){
 	relay = p;
 }
-void pump::setCallback(pumpCallback* p){
-		pcb = p;
-}
+
 void pump::onoff(){
 
-		if(soil > MAXSOILDRY && level > MINWATERLEVEL ) digitalWrite(relay, 1);
+		if(soil > MAXSOILDRY && level <= MINWATERLEVEL) digitalWrite(relay, 1);
 		else digitalWrite(relay, 0);
 }
 
@@ -38,11 +36,4 @@ void pump::stop(){
 		delete pumpThread;
 		pumpThread = NULL;
 	}
-}
-std::string pump::string_state(){
-	if (digitalRead(relay) == 1) return "on";
-		else return "off";
-}
-void pump::changeState(std::string state, int cnt){
-	on_off = state;
 }
