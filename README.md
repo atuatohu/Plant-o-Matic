@@ -46,9 +46,9 @@
 
 For some people plants are parts of their families and taking care of their plant is as crucial as for other people to take care of their pets. For others, they are something they keep forgetting about because of the busy schedule or heaps of thoughts.If you belong to the latter category, this project is for you! With it's help, it is possible not just to grow a plant, but also monitor it's state and other related data.
 
-System senses the soil moisture and the surrounding temperature and humidity. With the help of ultrasonic sensor, it is possible to observe the water level of your home reservoir to see if the water is enough to feed your plant while you are out of home. If the soil is gets dry and there is appropriate amount of water, water pump will automatically start and irrigate the plant.
+System senses the soil moisture and the surrounding temperature and humidity. With the help of ultrasonic sensor, it is possible to observe the water level of your home reservoir to see if the water is enough to feed your plant while you are out of home. If the soil is gets dry and there is appropriate water level, water pump will automatically start and irrigate the plant.
 
-Data monitoring is done in a web application, which is hosted on the Raspberry Pi. Besides that, it is possible to manually turn ON and OFF the water pump, by simply changing its state through the web page. Manual operation of the water pump will ignore all preset conditions of the running program, which means that pump will turn ON/OFF even if the water level is very low.
+Data monitoring is done in a web application, which is hosted on the Raspberry Pi.
 
 ## Hardware
 
