@@ -59,23 +59,52 @@ If you belong to the latter category, this project is for you! With it's help, i
 * [32GB MicroSD](https://www.amazon.co.uk/SanDisk-microSDHC-Adapter-Performance-SDSQUA4-032G-GN6MA/dp/B08GY9NYRM/ref=sr_1_3?dchild=1&keywords=micro+sd&qid=1618756194&sr=8-3)
 
 * [MCP3008 ADC](https://thepihut.com/products/adafruit-mcp3008-8-channel-10-bit-adc-with-spi-interface)
-<a href="https://thepihut.com/products/adafruit-mcp3008-8-channel-10-bit-adc-with-spi-interface">
-  <img src="https://cdn.shopify.com/s/files/1/0176/3274/products/100460_400x.jpg?v=1540884052" alt="mcp3008" width="190" height="190">
-</a>
+
+<pre>
+  <a href="https://thepihut.com/products/adafruit-mcp3008-8-channel-10-bit-adc-with-spi-interface">
+    <img src="https://cdn.shopify.com/s/files/1/0176/3274/products/100460_400x.jpg?v=1540884052" alt="mcp3008" width="190" height="190">
+  </a>
+</pre>
+
 * [Capacitive Soil Moisture Sensor v1.2](https://thepihut.com/products/capacitive-soil-moisture-sensor)
-<img src="https://cdn.shopify.com/s/files/1/0176/3274/products/0d667283-1ff8-47af-acb3-e36f83d244a5_400x.jpg?v=1592639176" alt="capacitive soil moisture" width="190" height="190">
+
+<pre>
+  <a href="https://thepihut.com/products/adafruit-mcp3008-8-channel-10-bit-adc-with-spi-interface">
+    <img src="https://cdn.shopify.com/s/files/1/0176/3274/products/0d667283-1ff8-47af-acb3-e36f83d244a5_400x.jpg?v=1592639176" alt="mcp3008" width="190" height="190">
+  </a>
+</pre>
 
 * [HC-SR04 Ultrasonic sensor ](https://thepihut.com/products/ultrasonic-distance-sensor-hcsr04)
-<img src="https://cdn.shopify.com/s/files/1/0176/3274/products/100284_400x.jpg?v=1540887570" alt="hc-sr04" width="190" height="190">
+
+<pre>
+  <a href="https://thepihut.com/products/adafruit-mcp3008-8-channel-10-bit-adc-with-spi-interface">
+    <img src="https://cdn.shopify.com/s/files/1/0176/3274/products/100284_400x.jpg?v=1540887570" alt="hc-sr04" width="190" height="190">
+  </a>
+</pre>
 
 * [DHT22 Temperature and Humidity Sensor](https://www.amazon.co.uk/gp/product/B01N6PB489/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
-<img src="https://images-na.ssl-images-amazon.com/images/I/71JDpqTmLqL._AC_SL1500_.jpg" alt="dht22" width="170" height="150">
+
+<pre>
+  <a href="https://thepihut.com/products/adafruit-mcp3008-8-channel-10-bit-adc-with-spi-interface">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/71JDpqTmLqL._AC_SL1500_.jpg" alt="dht22" width="170" height="150">
+  </a>
+</pre>
 
 * [6-12V Water pump](https://www.amazon.co.uk/gp/product/B0744FWNFR/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&psc=1)
-<img src="https://images-na.ssl-images-amazon.com/images/I/61sqqq%2BlR-L._AC_SL1500_.jpg" alt="water pump" width="190" height="210">
+
+<pre>
+  <a href="https://thepihut.com/products/adafruit-mcp3008-8-channel-10-bit-adc-with-spi-interface">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/61sqqq%2BlR-L._AC_SL1500_.jpg" alt="water pump" width="190" height="210">
+  </a>
+</pre>
 
 * [5 to 12 V Isolated DC/DC Converter](https://www.mouser.co.uk/ProductDetail/TRACO-Power/TRA-1-0512?qs=ckJk83FOD0VZ5q6Ozn6vsw==&utm_source=OEMSECRETS&utm_medium=aggregator&utm_campaign=TRA+1-0512&utm_term=TRA+10512&utm_content=TRACO+Power)
-<img src="https://www.tracopower.com/sites/default/files/styles/product_detail/public/products/pictures/tra1_mainpicture.jpeg?itok=h67IPxCM" alt="tra 1-0512" width="190" height="190">
+
+<pre>
+  <a href="https://thepihut.com/products/adafruit-mcp3008-8-channel-10-bit-adc-with-spi-interface">
+    <img src="https://www.tracopower.com/sites/default/files/styles/product_detail/public/products/pictures/tra1_mainpicture.jpeg?itok=h67IPxCM" alt="tra 1-0512" width="190" height="190">
+  </a>
+</pre>
 
 ## Software
 
