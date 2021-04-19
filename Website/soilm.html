@@ -14,11 +14,13 @@
 	  var jsonSoilServerPath = "/soil/:80";
 	  var soil = [];
 	  var s;
+	  var serverPath = "/pump/:80";
 	  var jsonDataSoil4Server = {
 	      soilmoisture: 1000,
 	      steps: 100,
 	      hello: "Hello, that's a test!"
 	  };
+	  
 	  // getJSON callback with the JSON data in "result"
 	  function soilPlot(result) {
 	      var utcSeconds = result.epoch;
@@ -54,10 +56,33 @@
 	      window.intervalId = setInterval(getSoilJSONfromServer,1000);
 	      $("#sendback").click(sendSoilJSON2server);
 	  }
-
+	
 	  // register callback to call it after the website has been set up
 	  $(document).ready(onDocReady);
+	  $(document).ready(function() {
 
+	      $("#on").click(function(event){
+		  $.post( 
+                      serverPath,
+                      {
+			  state: "on",
+			  steps: 5,
+			  hello: "Hello, that's a test!"
+		      }
+		  );
+	  });
+		  $("#off").click(function(event){
+		  $.post( 
+                      serverPath,
+                      {
+			  state: "off",
+			  steps: 5,
+			  hello: "Hello, that's a test!"
+		      }
+		  );
+		 });
+		  
+              });
 	</script>
 	
 </head>
@@ -78,8 +103,10 @@
 <br />
 <br />
 <p> Water Pump Manual Control</p>
-<input type = "button" id = "sendback" value = "Pump ON" />
-<input type = "button" id = "sendback2" value = "Pump OFF" />
+<input type="radio" id="on" name="pump" value="on">
+  <label for="on">on</label><br>
+  <input type="radio" id="off" name="pump" value="off">
+  <label for="off">off</label><br>
 <br />
 <br />
 <p><a href="/sensor/">JSON data</a></p>

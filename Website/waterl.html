@@ -11,125 +11,42 @@
 	<link rel="stylesheet" href="style-themes.css">
 	<script type="text/javascript">
 	  var maxSamples = 60;
-	  var jsonSoilServerPath = "/soil/:80";
-	  var jsonDHTServerPath = "/temperature/:80";
-	  var jsonHumServerPath = "/humidity/:80";
-	  var soil = [];
-	  var temp = [];
-	  var hum = [];
-	  var s,t,h;
-	  var jsonDataSoil4Server = {
-	      soilmoisture: 1000,
-	      steps: 100,
-	      hello: "Hello, that's a test!"
-	  };
-	  var jsonDataDHT4Server = {
-		  temperature: 20,
-		  steps: 100,
-		  hello: "Hello"
-	  };
-	  
-	  var jsonDataHum4Server = {
-		  humidity: 40,
-		  steps: 100,
-		  hello: "Hello"
-	  };
+	  var jsonUltraServerPath = "/ultra/:80";
+	  var ultra = [];
+	  var l;
 	  // getJSON callback with the JSON data in "result"
-	  function soilPlot(result) {
+	  function levelPlot(result) {
 	      var utcSeconds = result.epoch;
 	      var d = new Date(0);
 	      d.setUTCSeconds(utcSeconds);
 	      var x = d;
-	      var y = result.soilmoisture;
-              document.getElementById("soilmoisture").innerHTML = Math.round(y * 100) / 100;
-	      if (soil.length > maxSamples) {
-			soil.shift();
+	      var y = result.level;
+              document.getElementById("level").innerHTML = Math.round(y * 100) / 100;
+	      if (ultra.length > maxSamples) {
+			ultra.shift();
 	      }
-	      soil.push([x, y]);
-	      g.updateOptions( { 'file': soil } );
+	      ultra.push([x, y]);
+	      l.updateOptions( { 'file': ultra } );
 	  }
-	  function temperaturePlot(result) {
-	      var utcSeconds = result.epoch;
-	      var d = new Date(0);
-	      d.setUTCSeconds(utcSeconds);
-	      var x = d;
-	      var y = result.temperature;
-              document.getElementById("temperature").innerHTML = Math.round(y * 100) / 100;
-	      if (temp.length > maxSamples) {
-			temp.shift();
-	      }
-	      console.log(x);
-	      temp.push([x, y]);
-	      t.updateOptions( { 'file': temp } );
-	  }
-	  function humidityPlot(result){
-		  var utcSeconds = result.epoch;
-	      var d = new Date(0);
-	      d.setUTCSeconds(utcSeconds);
-	      var x = d;
-	      var y = result.humidity;
-              document.getElementById("humidity").innerHTML = Math.round(y * 100) / 100;
-	      if (hum.length > maxSamples) {
-			hum.shift();
-	      }
-	      console.log(x);
-	      hum.push([x, y]);
-	      h.updateOptions( { 'file': hum } );
-	  }
+	
 
 	  // timer callback to get the JSON data from the webserver
-	  function getSoilJSONfromServer() {
-		  $.getJSON(jsonSoilServerPath, soilPlot);
+	  function getLevelJSONfromServer() {
+		  $.getJSON(jsonUltraServerPath, levelPlot);
 	  }
-	  function getDHTJSONfromServer(){
-		   $.getJSON(jsonDHTServerPath,temperaturePlot);
-	  }
-	  function getHumDHTfromServer(){
-		   $.getJSON(jsonHumServerPath,humidityPlot);  
-	  }
-
-	  // send a JSON packet to the server
-	  function sendSoilJSON2server() {
-	      $.post(jsonServerPath,jsonSoilData4Server);
-	  }
-	  function sendDHTJSON2server(){
-	      $.post(jsonDHTServerPath,jsonDHTData4Server); 
-	  }
-	  function sendHumJSON2server(){
-	      $.post(jsonHumServerPath,jsonHumData4Server); 
-	  }	
+	  
 	  // callback after the document has been loaded
 	  function onDocReady() {
-	      g = new Dygraph(document.getElementById("div_g"), soil,
+	      l = new Dygraph(document.getElementById("div_l"), ultra,
 			      {
 				  drawPoints: true,
-				  labels: ['Time', 'Soil moisture'],
+				  labels: ['Time', 'Water level'],
 			      });
-	      window.intervalId = setInterval(getSoilJSONfromServer,1000);
-	      $("#sendback").click(sendSoilJSON2server);
+	      window.intervalId = setInterval(getLevelJSONfromServer,1000);
 	  }
-	  function onDocReady2(){
-		  t = new Dygraph(document.getElementById("div_t"), temp,
-			      {
-				  drawPoints: true,
-				  labels: ['Time', 'Temperature'],
-			      });
-	      window.intervalId = setInterval(getDHTJSONfromServer,1000);
-	      $("#sendback2").click(sendDHTJSON2server);
-	  }
-	  function onDocReady3(){
-		  h = new Dygraph(document.getElementById("div_h"), hum,
-			      {
-				  drawPoints: true,
-				  labels: ['Time', 'Humidity'],
-			      });
-	      window.intervalId = setInterval(getHumDHTfromServer,1000);
-	      $("#sendback2").click(sendHumJSON2server);
-	  }
+	  
 	  // register callback to call it after the website has been set up
 	  $(document).ready(onDocReady);
-	  $(document).ready(onDocReady2);
-	  $(document).ready(onDocReady3);
 	</script>
 	
 </head>
@@ -141,25 +58,19 @@
 		  	<a href="/temp.html">Temperature</a>
 		  	<a href="/hum.html">Humidity</a>
 		</div>
-      <h3><span id="soilmoisture">00</span> % </h3>
-      <h3><span id="temperature">00</span> degree Celsius </h3>
-      <h3><span id="humidity">00</span> % </h3>
+      <h3><span id="level">00</span> cm </h3>
 	<p>This is a realtime demo where the java script requests the data
 	  and then appends it to the plot every second.</p>
 	
-	<div id="div_g" style="width:600px; height:300px;"></div>
-	<div id="div_t" style="width:600px; height:300px;"></div>
-	<div id="div_h" style="width:600px; height:300px;"></div>
+	<div id="div_l" style="width:600px; height:300px;"></div>
 	<br />
 	<br />
 <br />
 <br />
 <p> Water Pump Manual Control</p>
-<input type = "button" id = "sendback" value = "Pump ON" />
-<input type = "button" id = "sendback2" value = "Pump OFF" />
 <br />
 <br />
-<p><a href="/sensor/">JSON data</a></p>
+<p><a href="/ultra/">JSON data</a></p>
 <br />
 <br />
 <br />
