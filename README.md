@@ -59,8 +59,9 @@ If you belong to the latter category, this project is for you! With it's help, i
 * [32GB MicroSD](https://www.amazon.co.uk/SanDisk-microSDHC-Adapter-Performance-SDSQUA4-032G-GN6MA/dp/B08GY9NYRM/ref=sr_1_3?dchild=1&keywords=micro+sd&qid=1618756194&sr=8-3)
 
 * [MCP3008 ADC](https://thepihut.com/products/adafruit-mcp3008-8-channel-10-bit-adc-with-spi-interface)
-<img src="https://cdn.shopify.com/s/files/1/0176/3274/products/100460_400x.jpg?v=1540884052" alt="mcp3008" width="190" height="190">
-
+<a href="https://thepihut.com/products/adafruit-mcp3008-8-channel-10-bit-adc-with-spi-interface">
+  <img src="https://cdn.shopify.com/s/files/1/0176/3274/products/100460_400x.jpg?v=1540884052" alt="mcp3008" width="190" height="190">
+</a>
 * [Capacitive Soil Moisture Sensor v1.2](https://thepihut.com/products/capacitive-soil-moisture-sensor)
 <img src="https://cdn.shopify.com/s/files/1/0176/3274/products/0d667283-1ff8-47af-acb3-e36f83d244a5_400x.jpg?v=1592639176" alt="capacitive soil moisture" width="190" height="190">
 
