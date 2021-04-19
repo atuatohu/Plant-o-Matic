@@ -28,13 +28,8 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about">About</a>
-    </li>
-    <li>
-      <a href="#hardware">Hardware</a>
-    </li>
-    <li><a href="#software">Software</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#hardware">Hardware</a></li>
     <li><a href="#how-to-start">How to Start</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -94,9 +89,17 @@ If you belong to the latter category, this project is for you! With it's help, i
   &nbsp;&nbsp;&nbsp;<img src="https://www.tracopower.com/sites/default/files/styles/product_detail/public/products/pictures/tra1_mainpicture.jpeg?itok=h67IPxCM" alt="tra 1-0512" width="190" height="190">
 </a>
 
-## Software
-
 ## How to Start
+
+Before downloading the project, check if the following prerequisites are present on your Raspberry Pi:
+
+* [wiringPi](http://wiringpi.com/)
+* [nginx](https://www.nginx.com/)
+* [cmake](https://cmake.org/)
+* [git](https://git-scm.com/)
+* SPI interface Enabled
+
+If not, please visit our [wiki page](https://github.com/atuatohu/Plant-o-Matic/wiki/Installation-guide) for detailed instructions. 
 
 <!-- ROADMAP -->
 ## Roadmap
