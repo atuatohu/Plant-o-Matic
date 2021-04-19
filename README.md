@@ -49,6 +49,9 @@ If you belong to the latter category, this project is for you! With it's help, i
 
 ## Hardware
 
+Before purchasing any device and starting to work with it, it is important to check its datasheet/manual.
+For this project, we've collected this information for each device. You can check it in the [Hardware]() folder.
+
 * [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
 
 * [32GB MicroSD](https://www.amazon.co.uk/SanDisk-microSDHC-Adapter-Performance-SDSQUA4-032G-GN6MA/dp/B08GY9NYRM/ref=sr_1_3?dchild=1&keywords=micro+sd&qid=1618756194&sr=8-3)
@@ -136,5 +139,6 @@ Project Link: [https://github.com/atuatohu/Plant-o-Matic](https://github.com/atu
 
 <!-- REFERENCES -->
 ## References
+* [jQuery <--> C++ fastcgi web API](https://github.com/berndporr/json_fastcgi_web_api)
 * [README Template](https://github.com/othneildrew/Best-README-Template) 
-
+* 
