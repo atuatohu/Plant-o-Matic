@@ -22,6 +22,14 @@ server {
 	  include       fastcgi_params;
 	  fastcgi_pass  unix:/tmp/humsocket;
 	}
+	location /pump/ {
+	  include       fastcgi_params;
+	  fastcgi_pass  unix:/tmp/pumpsocket;
+	}
+	location /ultra/ {
+	  include       fastcgi_params;
+	  fastcgi_pass  unix:/tmp/ultrasonic;
+        }
         location / {
 	  root /var/www/html;
           index index.html;
