@@ -15,12 +15,27 @@
 
 class pump{
 public:
+	/**
+	 * clas constructor
+	**/
 	pump(int relay);
+	/**
+	 * clas constructor
+	**/
 	~pump(){
 		stop();
 	}
+	/**
+	* function that allows to set the GPIO pin
+	**/
 	void setPin(int p);
+	/**
+	 * starts the pump logic
+	 **/
 	void start();
+	/**
+	 * stops the pump logic
+	 **/
 	void stop();
 private:
 	std::string state;

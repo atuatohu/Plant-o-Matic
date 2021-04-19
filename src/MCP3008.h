@@ -12,21 +12,52 @@
 #include <time.h>
 #include <thread>
 
+/**
+ * Callback for new samples which needs to be implemented by the main program.
+ * The function hasSample needs to be overloaded in the main program.
+ **/
+ 
 class MCP3008callback{
 	public:
+		/**
+		* Called after a sample has arrived.
+		**/
 		virtual void hasSample(int sample) = 0;
 };
-
+/** This class reads data from MCP3008 ADC in the background
+ * and calls a callback whenever data is available
+ **/
 class MCP3008{
 	public:
-		MCP3008(); //class constructor
-		~MCP3008() { //class destructor
+		 /**
+		 * clas constructor
+		 **/
+		MCP3008(); 
+		/**
+		 * clas destructor
+		 **/ 
+		~MCP3008() { 
 			stop();
 		}
-		void set_channel(uint8_t channel); //set channel of ADC from 0 to 7
-		void setCallBack(MCP3008callback* cb); //function that allows to threads to set callbacks
-		void start(); //start threads
-		void stop(); //stop threads
+		/**
+		 * function that allows to set channel
+		 * of ADC from 0 to 7
+		 **/
+		void set_channel(uint8_t channel); 
+		
+		/** 
+		 * function that allows to threads to set callbacks
+		 **/
+		void setCallBack(MCP3008callback* cb); 
+		
+		/**	Starts the data acquisition in the background and the 
+		 * callback is called with new samples
+		**/
+		void start(); 
+		/** 
+		 * Stops the data acquisition
+		 **/
+		void stop(); 
 	private:
 		uint8_t adc_channel;
 		MCP3008callback* mcp3008callback = NULL;

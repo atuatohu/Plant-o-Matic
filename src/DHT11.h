@@ -11,21 +11,52 @@
 #include <time.h>
 #include <thread>
 
+/**
+ * Callback for new samples which needs to be implemented by the main program.
+ * The function hasSample needs to be overloaded in the main program.
+ **/
+
 class DHT11callback{
 	public:
+		/**
+		 * Called after a sample has arrived.
+		 **/
 		virtual void hasSample(int *data) = 0;
 };
 
+/** 
+ * This class reads data from DHT11/22 sensors in the background
+ * and calls a callback whenever data is available
+ **/
 class DHT11{
 	public:
-		DHT11(int pin); //class constructor
-		~DHT11(){ //class destructor
+	 /**
+	 * clas constructor
+	 **/
+		DHT11(int pin); 
+		~DHT11(){ 
 			stop();
 		}
+		/**	
+		 * Starts the data acquisition in the background and the 
+		 * callback is called with new samples
+		* */
 		void start(); //start threads
+		
+		/** 
+		 * Stops the data acquisition
+		 **/
 		void stop(); //stop threads
-		void setCallBack(DHT11callback* cb); //function that allows to threads to set callbacks
-		void set_pin(int pin); //function that allows to set the GPIO pin
+		
+		/** 
+		 * function that allows to threads to set callbacks
+		 **/
+		void setCallBack(DHT11callback* cb); 
+		
+		/**
+		 * function that allows to set the GPIO pin
+		 **/
+		void set_pin(int pin); 
 	private:
 		DHT11callback* dht11callback = NULL;
 		int DHTPIN;

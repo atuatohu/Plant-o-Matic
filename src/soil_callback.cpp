@@ -2,6 +2,7 @@
 #include "MCP3008.h"
 #include <cstdio>
 
+//handler which receives data and calculate soil moist
 class SoilSensorSampleCallBack:public MCP3008callback{
 public:
 	int currentMoist;
@@ -13,4 +14,3 @@ public:
 		printf("soil = %d\n",currentMoist);
 	}
 };
-//g++ main.cpp ultrasonic.cpp pump.cpp soil_callback.cpp ultrasonic.cpp DHT11.cpp MCP3008.cpp -o main -lwiringPi -lpthread -lfcgi -lcurl
