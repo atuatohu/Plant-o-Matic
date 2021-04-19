@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<meta charset="utf-8">
+	<meta name="keywords" content="Plant">
+	<meta name="description" content="Plant-o-Matic v1.0">
+	<title class="section-title">Plant-o-Matic v1.0</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css"/>
+	<link rel="stylesheet" href="style-themes.css">
+	<script type="text/javascript">
+	  var maxSamples = 60;
+	  var jsonSoilServerPath = "/soil/:80";
+	  var soil = [];
+	  var s;
+	  var serverPath = "/pump/:80";
+	  var jsonDataSoil4Server = {
+	      soilmoisture: 1000,
+	      steps: 100,
+	      hello: "Hello, that's a test!"
+	  };
+	  
+	  // getJSON callback with the JSON data in "result"
+	  function soilPlot(result) {
+	      var utcSeconds = result.epoch;
+	      var d = new Date(0);
+	      d.setUTCSeconds(utcSeconds);
+	      var x = d;
+	      var y = result.soilmoisture;
+              document.getElementById("soilmoisture").innerHTML = Math.round(y * 100) / 100;
+	      if (soil.length > maxSamples) {
+			soil.shift();
+	      }
+	      soil.push([x, y]);
+	      g.updateOptions( { 'file': soil } );
+	  }
+
+	  // timer callback to get the JSON data from the webserver
+	  function getSoilJSONfromServer() {
+		  $.getJSON(jsonSoilServerPath, soilPlot);
+	  }
+
+	  // send a JSON packet to the server
+	  function sendSoilJSON2server() {
+	      $.post(jsonServerPath,jsonSoilData4Server);
+	  }
+
+	  // callback after the document has been loaded
+	  function onDocReady() {
+	      g = new Dygraph(document.getElementById("div_g"), soil,
+			      {
+				  drawPoints: true,
+				  labels: ['Time', 'Soil moisture'],
+			      });
+	      window.intervalId = setInterval(getSoilJSONfromServer,1000);
+	      $("#sendback").click(sendSoilJSON2server);
+	  }
+	
+	  // register callback to call it after the website has been set up
+	  $(document).ready(onDocReady);
+	  $(document).ready(function() {
+
+	      $("#on").click(function(event){
+		  $.post( 
+                      serverPath,
+                      {
+			  state: "on",
+			  steps: 5,
+			  hello: "Hello, that's a test!"
+		      }
+		  );
+	  });
+		  $("#off").click(function(event){
+		  $.post( 
+                      serverPath,
+                      {
+			  state: "off",
+			  steps: 5,
+			  hello: "Hello, that's a test!"
+		      }
+		  );
+		 });
+		  
+              });
+	</script>
+	
+</head>
+    <body>
+    	<h1> 
+			<a href="http://localhost/">
+       	  <img src="product_logo.PNG" alt="logo" width="50" height="50">
+     		</a>
+    			Plant-o-Matic
+    	</h1>
+    	<div class="topnav">
+		  	<a class="active" href="/soilm.html">Soil Moisture</a>
+		  	<a href="/waterl.html">Water Level</a>
+		  	<a href="/temp.html">Temperature</a>
+		  	<a href="/hum.html">Humidity</a>
+		</div>
+		<h3> Current soil moisture level: <span id="soilmoisture">00</span> % </h3>
+	<p>This is a measurement plot in realtime. Readings are presented each second.</p>
+	<div id="div_g" style="width:600px; height:300px;"></div>
+	<br />
+	<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<h2>References</h2>
+
+<p><a href="https://github.com/atuatohu/Plant-o-Matic">Project Github</p>
+
+<p><a href="http://dygraphs.com/">dygraphs</p>
+
+<p><a href="https://github.com/berndporr/rpi_AD7705_daq">Website Template</a></p>
+
+<p><a href="https://github.com/berndporr/json_fastcgi_web_api">FastCGI</a></p>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+    </body>
+</html>

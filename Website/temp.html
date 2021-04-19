@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<meta charset="utf-8">
+	<meta name="keywords" content="Plant">
+	<meta name="description" content="Plant-o-Matic v1.0">
+	<title class="section-title">Plant-o-Matic v1.0</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css"/>
+	<link rel="stylesheet" href="style-themes.css">
+	<script type="text/javascript">
+	  var maxSamples = 60;
+	  var jsonDHTServerPath = "/temperature/:80";
+	  var temp = [];
+	  var t;
+	  var jsonDataDHT4Server = {
+		  temperature: 20,
+		  steps: 100,
+		  hello: "Hello"
+	  };
+
+	  // getJSON callback with the JSON data in "result"
+
+	  function temperaturePlot(result) {
+	      var utcSeconds = result.epoch;
+	      var d = new Date(0);
+	      d.setUTCSeconds(utcSeconds);
+	      var x = d;
+	      var y = result.temperature;
+              document.getElementById("temperature").innerHTML = Math.round(y * 100) / 100;
+	      if (temp.length > maxSamples) {
+			temp.shift();
+	      }
+	      console.log(x);
+	      temp.push([x, y]);
+	      t.updateOptions( { 'file': temp } );
+	  }
+
+	  // timer callback to get the JSON data from the webserver
+
+	  function getDHTJSONfromServer(){
+		   $.getJSON(jsonDHTServerPath,temperaturePlot);
+	  }
+
+
+	  // send a JSON packet to the server
+	  function sendDHTJSON2server(){
+	      $.post(jsonDHTServerPath,jsonDHTData4Server); 
+	  }
+
+	  // callback after the document has been loaded
+
+	  function onDocReady2(){
+		  t = new Dygraph(document.getElementById("div_t"), temp,
+			      {
+				  drawPoints: true,
+				  labels: ['Time', 'Temperature'],
+			      });
+	      window.intervalId = setInterval(getDHTJSONfromServer,1000);
+	      $("#sendback2").click(sendDHTJSON2server);
+	  }
+
+	  // register callback to call it after the website has been set up
+
+	  $(document).ready(onDocReady2);
+
+	</script>
+	
+</head>
+    <body>
+	 	<h1> 
+			<a href="http://localhost/">
+       	 	<img src="product_logo.PNG" alt="logo" width="50" height="50">
+     		</a>
+    			Plant-o-Matic
+    	</h1>
+     	<div class="topnav">
+		  	<a href="/index.html">Soil Moisture</a>
+		  	<a href="/waterl.html">Water Level</a>
+		  	<a class="active" href="/temp.html">Temperature</a>
+		  	<a href="/hum.html">Humidity</a>
+		</div>
+    <h3> Surrounding temperature: <span id="temperature">00</span> degrees Celsius </h3>
+	<div id="div_t" style="width:600px; height:300px;"></div>
+	<p>This is a measurement plot in realtime. Readings are presented each second.</p>
+	<br />
+	<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<h2>References</h2>
+
+<p><a href="https://github.com/atuatohu/Plant-o-Matic">Project Github</p>
+
+<p><a href="http://dygraphs.com/">dygraphs</p>
+
+<p><a href="https://github.com/berndporr/rpi_AD7705_daq">Website Template</a></p>
+
+<p><a href="https://github.com/berndporr/json_fastcgi_web_api">FastCGI</a></p>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+    </body>
+</html>

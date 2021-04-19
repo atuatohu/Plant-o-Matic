@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<meta charset="utf-8">
+	<meta name="keywords" content="Plant">
+	<meta name="description" content="Plant-o-Matic v1.0">
+	<title class="section-title">Plant-o-Matic v1.0</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css"/>
+	<link rel="stylesheet" href="style-themes.css">
+	<script type="text/javascript">
+	  var maxSamples = 60;
+	  var jsonUltraServerPath = "/ultra/:80";
+	  var ultra = [];
+	  var l;
+	  // getJSON callback with the JSON data in "result"
+	  function levelPlot(result) {
+	      var utcSeconds = result.epoch;
+	      var d = new Date(0);
+	      d.setUTCSeconds(utcSeconds);
+	      var x = d;
+	      var y = result.level;
+              document.getElementById("level").innerHTML = Math.round(y * 100) / 100;
+	      if (ultra.length > maxSamples) {
+			ultra.shift();
+	      }
+	      ultra.push([x, y]);
+	      l.updateOptions( { 'file': ultra } );
+	  }
+	
+
+	  // timer callback to get the JSON data from the webserver
+	  function getLevelJSONfromServer() {
+		  $.getJSON(jsonUltraServerPath, levelPlot);
+	  }
+	  
+	  // callback after the document has been loaded
+	  function onDocReady() {
+	      l = new Dygraph(document.getElementById("div_l"), ultra,
+			      {
+				  drawPoints: true,
+				  labels: ['Time', 'Water level'],
+			      });
+	      window.intervalId = setInterval(getLevelJSONfromServer,1000);
+	  }
+	  
+	  // register callback to call it after the website has been set up
+	  $(document).ready(onDocReady);
+	</script>
+	
+</head>
+    <body>
+    	<h1> 
+			<a href="http://localhost/">
+       	  <img src="product_logo.PNG" alt="logo" width="50" height="50">
+     		</a>
+    			Plant-o-Matic
+    	</h1>
+    	<div class="topnav">
+		  	<a href="soilm.html">Soil Moisture</a>
+		  	<a class="active" href="/waterl.html">Water Level</a>
+		  	<a href="/temp.html">Temperature</a>
+		  	<a href="/hum.html">Humidity</a>
+		</div>
+      <h3><span id="level">00</span> cm </h3>
+	<p>This is a measurement plot in realtime. Readings are presented each second.</p>
+	
+	<div id="div_l" style="width:600px; height:300px;"></div>
+	<br />
+	<br />
+<br />
+<br />
+<p> Water Pump Manual Control</p>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<h2>References</h2>
+
+<p><a href="https://github.com/atuatohu/Plant-o-Matic">Project Github</p>
+
+<p><a href="http://dygraphs.com/">dygraphs</p>
+
+<p><a href="https://github.com/berndporr/rpi_AD7705_daq">Website Template</a></p>
+
+<p><a href="https://github.com/berndporr/json_fastcgi_web_api">FastCGI</a></p>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+    </body>
+</html>
