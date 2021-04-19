@@ -87,7 +87,12 @@
 	
 </head>
     <body>
-    	<h1>Plant-o-Matic</h1>
+    	<h1> 
+			<a href="http://localhost/">
+       	  <img src="product_logo.PNG" alt="logo" width="50" height="50">
+     		</a>
+    			Plant-o-Matic
+    	</h1>
     	<div class="topnav">
 		  	<a class="active" href="/soilm.html">Soil Moisture</a>
 		  	<a href="/waterl.html">Water Level</a>
@@ -95,21 +100,14 @@
 		  	<a href="/hum.html">Humidity</a>
 		</div>
 		<h3> Current soil moisture level: <span id="soilmoisture">00</span> % </h3>
-	<p>This is a realtime demo where the java script requests the data
-	  and then appends it to the plot every second.</p>
+	<p>This is a measurement plot in realtime. Readings are presented each second.</p>
 	<div id="div_g" style="width:600px; height:300px;"></div>
 	<br />
 	<br />
 <br />
 <br />
-<p> Water Pump Manual Control</p>
-<input type="radio" id="on" name="pump" value="on">
-  <label for="on">on</label><br>
-  <input type="radio" id="off" name="pump" value="off">
-  <label for="off">off</label><br>
 <br />
 <br />
-<p><a href="/sensor/">JSON data</a></p>
 <br />
 <br />
 <br />
@@ -118,9 +116,13 @@
 
 <h2>References</h2>
 
+<p><a href="https://github.com/atuatohu/Plant-o-Matic">Project Github</p>
+
 <p><a href="http://dygraphs.com/">dygraphs</p>
 
-<p><a href="https://github.com/berndporr/rpi_AD7705_daq">github repo</a></p>
+<p><a href="https://github.com/berndporr/rpi_AD7705_daq">Website Template</a></p>
+
+<p><a href="https://github.com/berndporr/json_fastcgi_web_api">FastCGI</a></p>
 
 <br />
 <br />
