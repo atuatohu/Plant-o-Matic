@@ -10,7 +10,7 @@
   <p align="center">
     Automated plant care and monitoring system using Raspberry Pi Model 3 B+
     <br />
-    <a href="https://github.com/atuatohu/Plant-o-Matic"><strong>Explore the docs »</strong></a>
+    <a href="https://atuatohu.github.io/Plant-o-Matic/html/index.html"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/atuatohu/Plant-o-Matic">View Demo</a>
@@ -184,7 +184,7 @@ Project Link: [https://github.com/atuatohu/Plant-o-Matic](https://github.com/atu
 <!-- REFERENCES -->
 ## References
 * [jQuery <--> C++ fastcgi web API](https://github.com/berndporr/json_fastcgi_web_api)
+* [DHT11](https://www.circuitbasics.com/how-to-set-up-the-dht11-humidity-sensor-on-the-raspberry-pi/)
+* [HC-SR04](http://www.piprojects.xyz/ultrasonic-distance-sensor/)
+* [Callbacks and threads](https://github.com/berndporr/rpi_AD7705_daq)
 * [README Template](https://github.com/othneildrew/Best-README-Template) 
-* [DHT11] (https://www.circuitbasics.com/how-to-set-up-the-dht11-humidity-sensor-on-the-raspberry-pi/)
-* [HC-SR04] (http://www.piprojects.xyz/ultrasonic-distance-sensor/)
-* [Callbacks and threads] (https://github.com/berndporr/rpi_AD7705_daq)
