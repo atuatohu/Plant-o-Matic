@@ -20,12 +20,11 @@
   <p align="center">
   <a href="https://www.youtube.com/watch?v=Qye0ZrwYpE0">
     <img src="https://github.com/atuatohu/Plant-o-Matic/blob/main/Materials/svg_logos/YouTube.svg" width="45">&nbsp;&nbsp;&nbsp;
+    <br />
+    <a href="https://hackaday.io/project/179266-plant-o-matic">Hackaday page</a>
   </a>
-    <img src="https://github.com/atuatohu/Plant-o-Matic/blob/main/Materials/svg_logos/Twitter.svg" width="45">&nbsp;&nbsp;&nbsp;
-    <img src="https://github.com/atuatohu/Plant-o-Matic/blob/main/Materials/svg_logos/Instagram.svg" width="45">&nbsp;&nbsp;&nbsp;
   </p>
 </p>
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -33,6 +32,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#hardware">Hardware</a></li>
     <li><a href="#how-to-start">How to Start</a></li>
+    <li><a href="#how-to-start">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -184,5 +184,6 @@ Project Link: [https://github.com/atuatohu/Plant-o-Matic](https://github.com/atu
 <!-- REFERENCES -->
 ## References
 * [jQuery <--> C++ fastcgi web API](https://github.com/berndporr/json_fastcgi_web_api)
+* 
 * [README Template](https://github.com/othneildrew/Best-README-Template) 
 * 
