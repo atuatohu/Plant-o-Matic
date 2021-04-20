@@ -50,6 +50,28 @@ System senses the soil moisture and the surrounding temperature and humidity. Wi
 
 Data monitoring is done in a web application, which is hosted on the Raspberry Pi.
 
+## Usage:
+To built:
+```
+cmake . 
+make
+```
+To run:
+Run it with the command:
+```
+./Plant
+```
+To test:
+```
+ctest
+```
+## FastCGI Server
+Start Plant `Plant` in the background with:
+```
+nohup ./Plant &
+```
+which creates sockets under `/tmp/soilsocket`, `/tmp/tempsocket`,`/tmp/humsocket`, `/tmp/ultrasonic`to communicate with the fastcgi server
+
 ## Hardware
 
 Before purchasing any device and starting to work with it, it is important to check its datasheet/manual.
@@ -103,7 +125,21 @@ The interconnection diagram:
 Before downloading the project, check if the following prerequisites are present on your Raspberry Pi:
 
 * [wiringPi](http://wiringpi.com/)
+
+To install:
+```
+sudo apt-get install wiringpi
+```
 * [nginx](https://www.nginx.com/)
+
+To install:
+```
+sudo apt install nginx
+```
+Reload the configuration file, if changes were made:
+```
+sudo /etc/init.d/nginx reload
+```
 * [cmake](https://cmake.org/)
 * [git](https://git-scm.com/)
 * SPI interface Enabled
