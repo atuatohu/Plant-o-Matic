@@ -50,28 +50,6 @@ System senses the soil moisture and the surrounding temperature and humidity. Wi
 
 Data monitoring is done in a web application, which is hosted on the Raspberry Pi.
 
-## Usage:
-To built:
-```
-cmake . 
-make
-```
-To run:
-Run it with the command:
-```
-./Plant
-```
-To test:
-```
-ctest
-```
-## FastCGI Server
-Start Plant `Plant` in the background with:
-```
-nohup ./Plant &
-```
-which creates sockets under `/tmp/soilsocket`, `/tmp/tempsocket`,`/tmp/humsocket`, `/tmp/ultrasonic`to communicate with the fastcgi server
-
 ## Hardware
 
 Before purchasing any device and starting to work with it, it is important to check its datasheet/manual.
@@ -145,6 +123,30 @@ sudo /etc/init.d/nginx reload
 * SPI interface Enabled
 
 If not, please visit our [wiki page](https://github.com/atuatohu/Plant-o-Matic/wiki/Installation-guide) for detailed instructions. 
+
+## Usage
+### Building the project
+
+To built:
+```
+cmake . 
+make
+```
+To run:
+Run it with the command:
+```
+./Plant
+```
+To test:
+```
+ctest
+```
+### Starting FastCGI Server
+Start Plant `Plant` in the background with:
+```
+nohup ./Plant &
+```
+which creates sockets under `/tmp/soilsocket`, `/tmp/tempsocket`,`/tmp/humsocket`, `/tmp/ultrasonic`to communicate with the fastcgi server.
 
 <!-- ROADMAP -->
 ## Roadmap
