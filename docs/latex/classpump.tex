@@ -1,0 +1,203 @@
+\hypertarget{classpump}{}\section{pump Class Reference}
+\label{classpump}\index{pump@{pump}}
+
+
+{\ttfamily \#include $<$pump.\+h$>$}
+
+
+
+Collaboration diagram for pump\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classpump__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpump_a57d3d6b37505970fc9524064fdc46b96}{pump} (int \hyperlink{classpump_a31d0a2af60c2193f5e5a6e4e51c56ec6}{relay})
+\item 
+\hyperlink{classpump_a17a634b5d8443578744bbd4c9eff9d87}{$\sim$pump} ()
+\item 
+void \hyperlink{classpump_a3c9536b9c3d2fdb7908b6cba845990d1}{set\+Pin} (int p)
+\item 
+void \hyperlink{classpump_a324936e9353f28b7633e838a9f1fff20}{start} ()
+\item 
+void \hyperlink{classpump_add87c3bee2a6faba0404e9ce115d0d17}{stop} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classpump_af6264b2a6b6e66ed1027565a44561647}{onoff} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classpump_a058e2690d8022501b5dfdc4ca646cb7c}{run} (\hyperlink{classpump}{pump} $\ast$p)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classpump_ad96353945f20f718e8eba930fa8405ba}{state}
+\item 
+int \hyperlink{classpump_a31d0a2af60c2193f5e5a6e4e51c56ec6}{relay}
+\item 
+int \hyperlink{classpump_ad797d26b29fe1ebf7ad6f6590fb2c674}{running} = 0
+\item 
+std\+::thread $\ast$ \hyperlink{classpump_a52d8740c4bc37939ead02e93a6dfdb68}{pump\+Thread} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpump_a57d3d6b37505970fc9524064fdc46b96}\label{classpump_a57d3d6b37505970fc9524064fdc46b96}} 
+\index{pump@{pump}!pump@{pump}}
+\index{pump@{pump}!pump@{pump}}
+\subsubsection{\texorpdfstring{pump()}{pump()}}
+{\footnotesize\ttfamily pump\+::pump (\begin{DoxyParamCaption}\item[{int}]{relay }\end{DoxyParamCaption})}
+
+clas constructor Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classpump_a57d3d6b37505970fc9524064fdc46b96_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpump_a17a634b5d8443578744bbd4c9eff9d87}\label{classpump_a17a634b5d8443578744bbd4c9eff9d87}} 
+\index{pump@{pump}!````~pump@{$\sim$pump}}
+\index{````~pump@{$\sim$pump}!pump@{pump}}
+\subsubsection{\texorpdfstring{$\sim$pump()}{~pump()}}
+{\footnotesize\ttfamily pump\+::$\sim$pump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+clas constructor Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpump_a17a634b5d8443578744bbd4c9eff9d87_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpump_af6264b2a6b6e66ed1027565a44561647}\label{classpump_af6264b2a6b6e66ed1027565a44561647}} 
+\index{pump@{pump}!onoff@{onoff}}
+\index{onoff@{onoff}!pump@{pump}}
+\subsubsection{\texorpdfstring{onoff()}{onoff()}}
+{\footnotesize\ttfamily void pump\+::onoff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpump_af6264b2a6b6e66ed1027565a44561647_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpump_a058e2690d8022501b5dfdc4ca646cb7c}\label{classpump_a058e2690d8022501b5dfdc4ca646cb7c}} 
+\index{pump@{pump}!run@{run}}
+\index{run@{run}!pump@{pump}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void pump\+::run (\begin{DoxyParamCaption}\item[{\hyperlink{classpump}{pump} $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classpump_a058e2690d8022501b5dfdc4ca646cb7c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpump_a058e2690d8022501b5dfdc4ca646cb7c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpump_a3c9536b9c3d2fdb7908b6cba845990d1}\label{classpump_a3c9536b9c3d2fdb7908b6cba845990d1}} 
+\index{pump@{pump}!set\+Pin@{set\+Pin}}
+\index{set\+Pin@{set\+Pin}!pump@{pump}}
+\subsubsection{\texorpdfstring{set\+Pin()}{setPin()}}
+{\footnotesize\ttfamily void pump\+::set\+Pin (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})}
+
+function that allows to set the G\+P\+IO pin Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{classpump_a3c9536b9c3d2fdb7908b6cba845990d1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpump_a324936e9353f28b7633e838a9f1fff20}\label{classpump_a324936e9353f28b7633e838a9f1fff20}} 
+\index{pump@{pump}!start@{start}}
+\index{start@{start}!pump@{pump}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void pump\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+starts the pump logic Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classpump_a324936e9353f28b7633e838a9f1fff20_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classpump_a324936e9353f28b7633e838a9f1fff20_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpump_add87c3bee2a6faba0404e9ce115d0d17}\label{classpump_add87c3bee2a6faba0404e9ce115d0d17}} 
+\index{pump@{pump}!stop@{stop}}
+\index{stop@{stop}!pump@{pump}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void pump\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+stops the pump logic Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classpump_add87c3bee2a6faba0404e9ce115d0d17_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classpump_a52d8740c4bc37939ead02e93a6dfdb68}\label{classpump_a52d8740c4bc37939ead02e93a6dfdb68}} 
+\index{pump@{pump}!pump\+Thread@{pump\+Thread}}
+\index{pump\+Thread@{pump\+Thread}!pump@{pump}}
+\subsubsection{\texorpdfstring{pump\+Thread}{pumpThread}}
+{\footnotesize\ttfamily std\+::thread$\ast$ pump\+::pump\+Thread = N\+U\+LL\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpump_a31d0a2af60c2193f5e5a6e4e51c56ec6}\label{classpump_a31d0a2af60c2193f5e5a6e4e51c56ec6}} 
+\index{pump@{pump}!relay@{relay}}
+\index{relay@{relay}!pump@{pump}}
+\subsubsection{\texorpdfstring{relay}{relay}}
+{\footnotesize\ttfamily int pump\+::relay\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpump_ad797d26b29fe1ebf7ad6f6590fb2c674}\label{classpump_ad797d26b29fe1ebf7ad6f6590fb2c674}} 
+\index{pump@{pump}!running@{running}}
+\index{running@{running}!pump@{pump}}
+\subsubsection{\texorpdfstring{running}{running}}
+{\footnotesize\ttfamily int pump\+::running = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classpump_ad96353945f20f718e8eba930fa8405ba}\label{classpump_ad96353945f20f718e8eba930fa8405ba}} 
+\index{pump@{pump}!state@{state}}
+\index{state@{state}!pump@{pump}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily std\+::string pump\+::state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{pump_8h}{pump.\+h}\item 
+src/\hyperlink{pump_8cpp}{pump.\+cpp}\end{DoxyCompactItemize}

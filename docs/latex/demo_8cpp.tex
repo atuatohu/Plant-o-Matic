@@ -1,0 +1,102 @@
+\hypertarget{demo_8cpp}{}\section{src/demo.cpp File Reference}
+\label{demo_8cpp}\index{src/demo.\+cpp@{src/demo.\+cpp}}
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$wiring\+Pi.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$wiring\+Pi\+S\+P\+I.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \char`\"{}ultrasonic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}M\+C\+P3008.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}D\+H\+T11.\+h\char`\"{}}\newline
+Include dependency graph for demo.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{demo_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classUltraSonicSensorSampleCallback}{Ultra\+Sonic\+Sensor\+Sample\+Callback}
+\item 
+class \hyperlink{classDHT11SampleCallBack}{D\+H\+T11\+Sample\+Call\+Back}
+\item 
+class \hyperlink{classSoilSensorSampleCallBack}{Soil\+Sensor\+Sample\+Call\+Back}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{demo_8cpp_a62aa8bb545eaea2f2aff910c5984bed5}{onoff} ()
+\item 
+int \hyperlink{demo_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile int \hyperlink{demo_8cpp_a616c57cfe8f2c4d6101a0d14e3160274}{soil}
+\item 
+volatile int \hyperlink{demo_8cpp_ab1e56f256b4419870ee27f3769f6e477}{level}
+\item 
+std\+::mutex \hyperlink{demo_8cpp_ad5e0dbd36f0d71fce9b00b7f991b2f38}{mtx}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{demo_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{demo_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{demo.\+cpp@{demo.\+cpp}!main@{main}}
+\index{main@{main}!demo.\+cpp@{demo.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{demo_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{demo_8cpp_a62aa8bb545eaea2f2aff910c5984bed5}\label{demo_8cpp_a62aa8bb545eaea2f2aff910c5984bed5}} 
+\index{demo.\+cpp@{demo.\+cpp}!onoff@{onoff}}
+\index{onoff@{onoff}!demo.\+cpp@{demo.\+cpp}}
+\subsubsection{\texorpdfstring{onoff()}{onoff()}}
+{\footnotesize\ttfamily void onoff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{demo_8cpp_a62aa8bb545eaea2f2aff910c5984bed5_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{demo_8cpp_ab1e56f256b4419870ee27f3769f6e477}\label{demo_8cpp_ab1e56f256b4419870ee27f3769f6e477}} 
+\index{demo.\+cpp@{demo.\+cpp}!level@{level}}
+\index{level@{level}!demo.\+cpp@{demo.\+cpp}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily volatile int level}
+
+\mbox{\Hypertarget{demo_8cpp_ad5e0dbd36f0d71fce9b00b7f991b2f38}\label{demo_8cpp_ad5e0dbd36f0d71fce9b00b7f991b2f38}} 
+\index{demo.\+cpp@{demo.\+cpp}!mtx@{mtx}}
+\index{mtx@{mtx}!demo.\+cpp@{demo.\+cpp}}
+\subsubsection{\texorpdfstring{mtx}{mtx}}
+{\footnotesize\ttfamily std\+::mutex mtx}
+
+\mbox{\Hypertarget{demo_8cpp_a616c57cfe8f2c4d6101a0d14e3160274}\label{demo_8cpp_a616c57cfe8f2c4d6101a0d14e3160274}} 
+\index{demo.\+cpp@{demo.\+cpp}!soil@{soil}}
+\index{soil@{soil}!demo.\+cpp@{demo.\+cpp}}
+\subsubsection{\texorpdfstring{soil}{soil}}
+{\footnotesize\ttfamily volatile int soil}
+

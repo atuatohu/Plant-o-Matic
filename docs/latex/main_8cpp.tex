@@ -1,0 +1,135 @@
+\hypertarget{main_8cpp}{}\section{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.\+cpp@{src/main.\+cpp}}
+{\ttfamily \#include \char`\"{}M\+C\+P3008.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}D\+H\+T11.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ultrasonic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}json\+\_\+fastcgi\+\_\+web\+\_\+api.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pump.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}global\+\_\+variables.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}soil\+\_\+callback.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ultrasonic\+\_\+callback.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dht11\+\_\+callback.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}treshhold.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$wiring\+Pi.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$wiring\+Pi\+S\+P\+I.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classJSONCGIMCP3008Callback}{J\+S\+O\+N\+C\+G\+I\+M\+C\+P3008\+Callback}
+\item 
+class \hyperlink{classJSONDHT11CallbackTemp}{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp}
+\item 
+class \hyperlink{classJSONDHT11CallbackHum}{J\+S\+O\+N\+D\+H\+T11\+Callback\+Hum}
+\item 
+class \hyperlink{classJSONUltraCallback}{J\+S\+O\+N\+Ultra\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8cpp_a844160e16f1a3e514df9ce65683e17bd}{sig\+Handler} (int sig)
+\item 
+void \hyperlink{main_8cpp_a20a45737018ec41ab19cb4f5164b26ac}{set\+H\+U\+P\+Handler} ()
+\item 
+int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a94a2e79f236e50a73fb8c842bcff7738}{main\+Running} = 1
+\item 
+volatile int \hyperlink{main_8cpp_a616c57cfe8f2c4d6101a0d14e3160274}{soil}
+\item 
+volatile int \hyperlink{main_8cpp_ab1e56f256b4419870ee27f3769f6e477}{level}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a20a45737018ec41ab19cb4f5164b26ac}\label{main_8cpp_a20a45737018ec41ab19cb4f5164b26ac}} 
+\index{main.\+cpp@{main.\+cpp}!set\+H\+U\+P\+Handler@{set\+H\+U\+P\+Handler}}
+\index{set\+H\+U\+P\+Handler@{set\+H\+U\+P\+Handler}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{set\+H\+U\+P\+Handler()}{setHUPHandler()}}
+{\footnotesize\ttfamily void set\+H\+U\+P\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets a signal handler so that you can kill the background process gracefully with\+: kill -\/\+H\+UP $<$\+P\+I\+D$>$ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{main_8cpp_a20a45737018ec41ab19cb4f5164b26ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{main_8cpp_a20a45737018ec41ab19cb4f5164b26ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a844160e16f1a3e514df9ce65683e17bd}\label{main_8cpp_a844160e16f1a3e514df9ce65683e17bd}} 
+\index{main.\+cpp@{main.\+cpp}!sig\+Handler@{sig\+Handler}}
+\index{sig\+Handler@{sig\+Handler}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{sig\+Handler()}{sigHandler()}}
+{\footnotesize\ttfamily void sig\+Handler (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+Handler when the user has pressed ctrl-\/C send H\+UP via the kill command. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{main_8cpp_a844160e16f1a3e514df9ce65683e17bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_ab1e56f256b4419870ee27f3769f6e477}\label{main_8cpp_ab1e56f256b4419870ee27f3769f6e477}} 
+\index{main.\+cpp@{main.\+cpp}!level@{level}}
+\index{level@{level}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily volatile int level}
+
+\mbox{\Hypertarget{main_8cpp_a94a2e79f236e50a73fb8c842bcff7738}\label{main_8cpp_a94a2e79f236e50a73fb8c842bcff7738}} 
+\index{main.\+cpp@{main.\+cpp}!main\+Running@{main\+Running}}
+\index{main\+Running@{main\+Running}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main\+Running}{mainRunning}}
+{\footnotesize\ttfamily int main\+Running = 1}
+
+\mbox{\Hypertarget{main_8cpp_a616c57cfe8f2c4d6101a0d14e3160274}\label{main_8cpp_a616c57cfe8f2c4d6101a0d14e3160274}} 
+\index{main.\+cpp@{main.\+cpp}!soil@{soil}}
+\index{soil@{soil}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{soil}{soil}}
+{\footnotesize\ttfamily volatile int soil}
+

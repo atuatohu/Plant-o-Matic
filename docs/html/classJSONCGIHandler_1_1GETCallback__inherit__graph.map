@@ -1,0 +1,6 @@
+<map id="JSONCGIHandler::GETCallback" name="JSONCGIHandler::GETCallback">
+<area shape="rect" id="node2" href="$classJSONCGIMCP3008Callback.html" title="{JSONCGIMCP3008Callback\n|&#45; cb\l|+ JSONCGIMCP3008Callback()\l+ getJSONString()\l}" alt="" coords="5,145,216,237"/>
+<area shape="rect" id="node3" href="$classJSONDHT11CallbackHum.html" title="{JSONDHT11CallbackHum\n|&#45; dht11\l|+ JSONDHT11CallbackHum()\l+ getJSONString()\l}" alt="" coords="239,145,438,237"/>
+<area shape="rect" id="node4" href="$classJSONDHT11CallbackTemp.html" title="{JSONDHT11CallbackTemp\n|&#45; dht11\l|+ JSONDHT11CallbackTemp()\l+ getJSONString()\l}" alt="" coords="462,145,666,237"/>
+<area shape="rect" id="node5" href="$classJSONUltraCallback.html" title="{JSONUltraCallback\n|&#45; ultra\l|+ JSONUltraCallback()\l+ getJSONString()\l}" alt="" coords="691,145,848,237"/>
+</map>

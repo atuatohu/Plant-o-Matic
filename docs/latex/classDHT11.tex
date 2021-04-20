@@ -1,0 +1,230 @@
+\hypertarget{classDHT11}{}\section{D\+H\+T11 Class Reference}
+\label{classDHT11}\index{D\+H\+T11@{D\+H\+T11}}
+
+
+{\ttfamily \#include $<$D\+H\+T11.\+h$>$}
+
+
+
+Collaboration diagram for D\+H\+T11\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classDHT11__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDHT11_ad52a70ab511e087aaad53848d64ee976}{D\+H\+T11} (int pin)
+\item 
+\hyperlink{classDHT11_af210e94620802c4dd3a32f826b9cc389}{$\sim$\+D\+H\+T11} ()
+\item 
+void \hyperlink{classDHT11_a09a0c99de09f1849342d436624251f1d}{start} ()
+\item 
+void \hyperlink{classDHT11_a53188c041b8c49557d328f18ffbdacd7}{stop} ()
+\item 
+void \hyperlink{classDHT11_aeb671153e6b5db00efdf2ab654c45cb6}{set\+Call\+Back} (\hyperlink{classDHT11callback}{D\+H\+T11callback} $\ast$cb)
+\item 
+void \hyperlink{classDHT11_aa39533ef269048f791167e05598757fe}{set\+\_\+pin} (int pin)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classDHT11_abf4c039a75c0458ee45621c12feec0c7}{read\+\_\+dht\+\_\+data} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classDHT11_ae1a44c906a97ff4398d4d6721a1c8780}{run} (\hyperlink{classDHT11}{D\+H\+T11} $\ast$dht11)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDHT11callback}{D\+H\+T11callback} $\ast$ \hyperlink{classDHT11_aebe3e30af75be9b419eb2fde69cfc00d}{dht11callback} = N\+U\+LL
+\item 
+int \hyperlink{classDHT11_a4d99108d62275d5ccf72df9d17b3211b}{D\+H\+T\+P\+IN}
+\item 
+int \hyperlink{classDHT11_a5e1eeeaac76105d3c7db78b63cab007d}{running} = 0
+\item 
+const int \hyperlink{classDHT11_aba8c5976478e858ec94a70d29deac72d}{M\+A\+X\+T\+I\+M\+I\+N\+GS} = 85
+\item 
+std\+::thread $\ast$ \hyperlink{classDHT11_a5e25d02345012c339d450951df5cebf7}{dht\+Thread} = N\+U\+LL
+\item 
+int \hyperlink{classDHT11_aa90815a46d88e84c34f091bf8f208315}{dht11\+\_\+dat} \mbox{[}5\mbox{]} = \{ 0, 0, 0, 0, 0 \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class reads data from D\+H\+T11/22 sensors in the background and calls a callback whenever data is available 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDHT11_ad52a70ab511e087aaad53848d64ee976}\label{classDHT11_ad52a70ab511e087aaad53848d64ee976}} 
+\index{D\+H\+T11@{D\+H\+T11}!D\+H\+T11@{D\+H\+T11}}
+\index{D\+H\+T11@{D\+H\+T11}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{D\+H\+T11()}{DHT11()}}
+{\footnotesize\ttfamily D\+H\+T11\+::\+D\+H\+T11 (\begin{DoxyParamCaption}\item[{int}]{pin }\end{DoxyParamCaption})}
+
+clas constructor Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classDHT11_ad52a70ab511e087aaad53848d64ee976_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDHT11_af210e94620802c4dd3a32f826b9cc389}\label{classDHT11_af210e94620802c4dd3a32f826b9cc389}} 
+\index{D\+H\+T11@{D\+H\+T11}!````~D\+H\+T11@{$\sim$\+D\+H\+T11}}
+\index{````~D\+H\+T11@{$\sim$\+D\+H\+T11}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{$\sim$\+D\+H\+T11()}{~DHT11()}}
+{\footnotesize\ttfamily D\+H\+T11\+::$\sim$\+D\+H\+T11 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDHT11_abf4c039a75c0458ee45621c12feec0c7}\label{classDHT11_abf4c039a75c0458ee45621c12feec0c7}} 
+\index{D\+H\+T11@{D\+H\+T11}!read\+\_\+dht\+\_\+data@{read\+\_\+dht\+\_\+data}}
+\index{read\+\_\+dht\+\_\+data@{read\+\_\+dht\+\_\+data}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{read\+\_\+dht\+\_\+data()}{read\_dht\_data()}}
+{\footnotesize\ttfamily bool D\+H\+T11\+::read\+\_\+dht\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDHT11_abf4c039a75c0458ee45621c12feec0c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDHT11_ae1a44c906a97ff4398d4d6721a1c8780}\label{classDHT11_ae1a44c906a97ff4398d4d6721a1c8780}} 
+\index{D\+H\+T11@{D\+H\+T11}!run@{run}}
+\index{run@{run}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void D\+H\+T11\+::run (\begin{DoxyParamCaption}\item[{\hyperlink{classDHT11}{D\+H\+T11} $\ast$}]{dht11 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{classDHT11_ae1a44c906a97ff4398d4d6721a1c8780_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classDHT11_ae1a44c906a97ff4398d4d6721a1c8780_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDHT11_aa39533ef269048f791167e05598757fe}\label{classDHT11_aa39533ef269048f791167e05598757fe}} 
+\index{D\+H\+T11@{D\+H\+T11}!set\+\_\+pin@{set\+\_\+pin}}
+\index{set\+\_\+pin@{set\+\_\+pin}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{set\+\_\+pin()}{set\_pin()}}
+{\footnotesize\ttfamily void D\+H\+T11\+::set\+\_\+pin (\begin{DoxyParamCaption}\item[{int}]{pin }\end{DoxyParamCaption})}
+
+function that allows to set the G\+P\+IO pin Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classDHT11_aa39533ef269048f791167e05598757fe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDHT11_aeb671153e6b5db00efdf2ab654c45cb6}\label{classDHT11_aeb671153e6b5db00efdf2ab654c45cb6}} 
+\index{D\+H\+T11@{D\+H\+T11}!set\+Call\+Back@{set\+Call\+Back}}
+\index{set\+Call\+Back@{set\+Call\+Back}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{set\+Call\+Back()}{setCallBack()}}
+{\footnotesize\ttfamily void D\+H\+T11\+::set\+Call\+Back (\begin{DoxyParamCaption}\item[{\hyperlink{classDHT11callback}{D\+H\+T11callback} $\ast$}]{cb }\end{DoxyParamCaption})}
+
+function that allows to threads to set callbacks Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classDHT11_aeb671153e6b5db00efdf2ab654c45cb6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDHT11_a09a0c99de09f1849342d436624251f1d}\label{classDHT11_a09a0c99de09f1849342d436624251f1d}} 
+\index{D\+H\+T11@{D\+H\+T11}!start@{start}}
+\index{start@{start}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void D\+H\+T11\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Starts the data acquisition in the background and the callback is called with new samples Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDHT11_a09a0c99de09f1849342d436624251f1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{classDHT11_a09a0c99de09f1849342d436624251f1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDHT11_a53188c041b8c49557d328f18ffbdacd7}\label{classDHT11_a53188c041b8c49557d328f18ffbdacd7}} 
+\index{D\+H\+T11@{D\+H\+T11}!stop@{stop}}
+\index{stop@{stop}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void D\+H\+T11\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Stops the data acquisition Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classDHT11_a53188c041b8c49557d328f18ffbdacd7_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classDHT11_aa90815a46d88e84c34f091bf8f208315}\label{classDHT11_aa90815a46d88e84c34f091bf8f208315}} 
+\index{D\+H\+T11@{D\+H\+T11}!dht11\+\_\+dat@{dht11\+\_\+dat}}
+\index{dht11\+\_\+dat@{dht11\+\_\+dat}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{dht11\+\_\+dat}{dht11\_dat}}
+{\footnotesize\ttfamily int D\+H\+T11\+::dht11\+\_\+dat\mbox{[}5\mbox{]} = \{ 0, 0, 0, 0, 0 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDHT11_aebe3e30af75be9b419eb2fde69cfc00d}\label{classDHT11_aebe3e30af75be9b419eb2fde69cfc00d}} 
+\index{D\+H\+T11@{D\+H\+T11}!dht11callback@{dht11callback}}
+\index{dht11callback@{dht11callback}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{dht11callback}{dht11callback}}
+{\footnotesize\ttfamily \hyperlink{classDHT11callback}{D\+H\+T11callback}$\ast$ D\+H\+T11\+::dht11callback = N\+U\+LL\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDHT11_a4d99108d62275d5ccf72df9d17b3211b}\label{classDHT11_a4d99108d62275d5ccf72df9d17b3211b}} 
+\index{D\+H\+T11@{D\+H\+T11}!D\+H\+T\+P\+IN@{D\+H\+T\+P\+IN}}
+\index{D\+H\+T\+P\+IN@{D\+H\+T\+P\+IN}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{D\+H\+T\+P\+IN}{DHTPIN}}
+{\footnotesize\ttfamily int D\+H\+T11\+::\+D\+H\+T\+P\+IN\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDHT11_a5e25d02345012c339d450951df5cebf7}\label{classDHT11_a5e25d02345012c339d450951df5cebf7}} 
+\index{D\+H\+T11@{D\+H\+T11}!dht\+Thread@{dht\+Thread}}
+\index{dht\+Thread@{dht\+Thread}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{dht\+Thread}{dhtThread}}
+{\footnotesize\ttfamily std\+::thread$\ast$ D\+H\+T11\+::dht\+Thread = N\+U\+LL\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDHT11_aba8c5976478e858ec94a70d29deac72d}\label{classDHT11_aba8c5976478e858ec94a70d29deac72d}} 
+\index{D\+H\+T11@{D\+H\+T11}!M\+A\+X\+T\+I\+M\+I\+N\+GS@{M\+A\+X\+T\+I\+M\+I\+N\+GS}}
+\index{M\+A\+X\+T\+I\+M\+I\+N\+GS@{M\+A\+X\+T\+I\+M\+I\+N\+GS}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{M\+A\+X\+T\+I\+M\+I\+N\+GS}{MAXTIMINGS}}
+{\footnotesize\ttfamily const int D\+H\+T11\+::\+M\+A\+X\+T\+I\+M\+I\+N\+GS = 85\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDHT11_a5e1eeeaac76105d3c7db78b63cab007d}\label{classDHT11_a5e1eeeaac76105d3c7db78b63cab007d}} 
+\index{D\+H\+T11@{D\+H\+T11}!running@{running}}
+\index{running@{running}!D\+H\+T11@{D\+H\+T11}}
+\subsubsection{\texorpdfstring{running}{running}}
+{\footnotesize\ttfamily int D\+H\+T11\+::running = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{DHT11_8h}{D\+H\+T11.\+h}\item 
+src/\hyperlink{DHT11_8cpp}{D\+H\+T11.\+cpp}\end{DoxyCompactItemize}

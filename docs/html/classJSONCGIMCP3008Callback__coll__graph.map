@@ -1,0 +1,5 @@
+<map id="JSONCGIMCP3008Callback" name="JSONCGIMCP3008Callback">
+<area shape="rect" id="node2" href="$classJSONCGIHandler_1_1GETCallback.html" title="{JSONCGIHandler::GETCallback\n||+ getJSONString()\l+ getContentType()\l}" alt="" coords="5,139,219,231"/>
+<area shape="rect" id="node3" href="$classSoilSensorSampleCallBack.html" title="{SoilSensorSampleCallBack\n|+ currentMoist\l+ t\l|+ hasSample()\l+ hasSample()\l}" alt="" coords="243,132,426,239"/>
+<area shape="rect" id="node4" href="$classMCP3008callback.html" title="{MCP3008callback\n||+ hasSample()\l}" alt="" coords="271,5,399,83"/>
+</map>

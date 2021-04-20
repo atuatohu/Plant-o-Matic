@@ -1,0 +1,7 @@
+<map id="pump::~pump" name="pump::~pump">
+<area shape="rect" id="node2" href="$classpump.html#add87c3bee2a6faba0404e9ce115d0d17" title="pump::stop" alt="" coords="162,5,249,32"/>
+<area shape="rect" id="node3" href="$classpump.html#a3c9536b9c3d2fdb7908b6cba845990d1" title="pump::setPin" alt="" coords="156,56,255,83"/>
+<area shape="rect" id="node4" href="$classpump.html#a324936e9353f28b7633e838a9f1fff20" title="pump::start" alt="" coords="161,107,249,133"/>
+<area shape="rect" id="node5" href="$classpump.html#a058e2690d8022501b5dfdc4ca646cb7c" title="pump::run" alt="" coords="303,107,383,133"/>
+<area shape="rect" id="node6" href="$classpump.html#af6264b2a6b6e66ed1027565a44561647" title="pump::onoff" alt="" coords="431,107,521,133"/>
+</map>

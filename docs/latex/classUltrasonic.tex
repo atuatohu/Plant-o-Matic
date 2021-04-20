@@ -1,0 +1,219 @@
+\hypertarget{classUltrasonic}{}\section{Ultrasonic Class Reference}
+\label{classUltrasonic}\index{Ultrasonic@{Ultrasonic}}
+
+
+{\ttfamily \#include $<$ultrasonic.\+h$>$}
+
+
+
+Collaboration diagram for Ultrasonic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classUltrasonic__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUltrasonic_a306b1ccdce9cc1bfa3ef4a51502e7d44}{Ultrasonic} (int \hyperlink{classUltrasonic_a2979ecabfbda7cae5394eef20c862d99}{echo}, int \hyperlink{classUltrasonic_a90f3f5b30f09038811bcc5231efdc619}{trig})
+\item 
+\hyperlink{classUltrasonic_ab5066b2bfeac723140c18b9f8340abad}{$\sim$\+Ultrasonic} ()
+\item 
+void \hyperlink{classUltrasonic_aa0ede289109954e5b3c713bbebe8c8e1}{start} ()
+\item 
+void \hyperlink{classUltrasonic_ae5d433dfce8572b5cc1d75a909ae2c1c}{stop} ()
+\item 
+void \hyperlink{classUltrasonic_a0b9d6fed8f4d6a207a91f19763ba70fe}{set\+Call\+Back} (\hyperlink{classUltrasonicCallback}{Ultrasonic\+Callback} $\ast$cb)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classUltrasonic_a5ceb2f35156c7e6b6c22538b090b1923}{set\+Pin} (int e, int t)
+\item 
+int \hyperlink{classUltrasonic_a7af95864d8b2b58d56e661e0fcb4ca8b}{get\+Distance\+CM} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classUltrasonic_ac1df91b01624260ce4c19126e3aa0160}{run} (\hyperlink{classUltrasonic}{Ultrasonic} $\ast$ultrasonic)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUltrasonicCallback}{Ultrasonic\+Callback} $\ast$ \hyperlink{classUltrasonic_a00cb643880cff1ac6b3b429e92c5bba9}{ultrasonic\+Cb} = N\+U\+LL
+\item 
+int \hyperlink{classUltrasonic_a2979ecabfbda7cae5394eef20c862d99}{echo}
+\item 
+int \hyperlink{classUltrasonic_a90f3f5b30f09038811bcc5231efdc619}{trig}
+\item 
+std\+::thread $\ast$ \hyperlink{classUltrasonic_a830f5b7f4e3de362e1b90eb5d6f3844b}{ultra\+Thread} = N\+U\+LL
+\item 
+int \hyperlink{classUltrasonic_a18088bcacb3c6080c08c2ea105313f65}{running} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUltrasonic_a306b1ccdce9cc1bfa3ef4a51502e7d44}\label{classUltrasonic_a306b1ccdce9cc1bfa3ef4a51502e7d44}} 
+\index{Ultrasonic@{Ultrasonic}!Ultrasonic@{Ultrasonic}}
+\index{Ultrasonic@{Ultrasonic}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{Ultrasonic()}{Ultrasonic()}}
+{\footnotesize\ttfamily Ultrasonic\+::\+Ultrasonic (\begin{DoxyParamCaption}\item[{int}]{echo,  }\item[{int}]{trig }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classUltrasonic_a306b1ccdce9cc1bfa3ef4a51502e7d44_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUltrasonic_ab5066b2bfeac723140c18b9f8340abad}\label{classUltrasonic_ab5066b2bfeac723140c18b9f8340abad}} 
+\index{Ultrasonic@{Ultrasonic}!````~Ultrasonic@{$\sim$\+Ultrasonic}}
+\index{````~Ultrasonic@{$\sim$\+Ultrasonic}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{$\sim$\+Ultrasonic()}{~Ultrasonic()}}
+{\footnotesize\ttfamily Ultrasonic\+::$\sim$\+Ultrasonic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classUltrasonic_a7af95864d8b2b58d56e661e0fcb4ca8b}\label{classUltrasonic_a7af95864d8b2b58d56e661e0fcb4ca8b}} 
+\index{Ultrasonic@{Ultrasonic}!get\+Distance\+CM@{get\+Distance\+CM}}
+\index{get\+Distance\+CM@{get\+Distance\+CM}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{get\+Distance\+C\+M()}{getDistanceCM()}}
+{\footnotesize\ttfamily int Ultrasonic\+::get\+Distance\+CM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUltrasonic_a7af95864d8b2b58d56e661e0fcb4ca8b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUltrasonic_ac1df91b01624260ce4c19126e3aa0160}\label{classUltrasonic_ac1df91b01624260ce4c19126e3aa0160}} 
+\index{Ultrasonic@{Ultrasonic}!run@{run}}
+\index{run@{run}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Ultrasonic\+::run (\begin{DoxyParamCaption}\item[{\hyperlink{classUltrasonic}{Ultrasonic} $\ast$}]{ultrasonic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{classUltrasonic_ac1df91b01624260ce4c19126e3aa0160_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUltrasonic_ac1df91b01624260ce4c19126e3aa0160_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUltrasonic_a0b9d6fed8f4d6a207a91f19763ba70fe}\label{classUltrasonic_a0b9d6fed8f4d6a207a91f19763ba70fe}} 
+\index{Ultrasonic@{Ultrasonic}!set\+Call\+Back@{set\+Call\+Back}}
+\index{set\+Call\+Back@{set\+Call\+Back}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{set\+Call\+Back()}{setCallBack()}}
+{\footnotesize\ttfamily void Ultrasonic\+::set\+Call\+Back (\begin{DoxyParamCaption}\item[{\hyperlink{classUltrasonicCallback}{Ultrasonic\+Callback} $\ast$}]{cb }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classUltrasonic_a0b9d6fed8f4d6a207a91f19763ba70fe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUltrasonic_a5ceb2f35156c7e6b6c22538b090b1923}\label{classUltrasonic_a5ceb2f35156c7e6b6c22538b090b1923}} 
+\index{Ultrasonic@{Ultrasonic}!set\+Pin@{set\+Pin}}
+\index{set\+Pin@{set\+Pin}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{set\+Pin()}{setPin()}}
+{\footnotesize\ttfamily void Ultrasonic\+::set\+Pin (\begin{DoxyParamCaption}\item[{int}]{e,  }\item[{int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classUltrasonic_a5ceb2f35156c7e6b6c22538b090b1923_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUltrasonic_aa0ede289109954e5b3c713bbebe8c8e1}\label{classUltrasonic_aa0ede289109954e5b3c713bbebe8c8e1}} 
+\index{Ultrasonic@{Ultrasonic}!start@{start}}
+\index{start@{start}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Ultrasonic\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUltrasonic_aa0ede289109954e5b3c713bbebe8c8e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classUltrasonic_aa0ede289109954e5b3c713bbebe8c8e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classUltrasonic_ae5d433dfce8572b5cc1d75a909ae2c1c}\label{classUltrasonic_ae5d433dfce8572b5cc1d75a909ae2c1c}} 
+\index{Ultrasonic@{Ultrasonic}!stop@{stop}}
+\index{stop@{stop}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Ultrasonic\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classUltrasonic_ae5d433dfce8572b5cc1d75a909ae2c1c_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classUltrasonic_a2979ecabfbda7cae5394eef20c862d99}\label{classUltrasonic_a2979ecabfbda7cae5394eef20c862d99}} 
+\index{Ultrasonic@{Ultrasonic}!echo@{echo}}
+\index{echo@{echo}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{echo}{echo}}
+{\footnotesize\ttfamily int Ultrasonic\+::echo\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classUltrasonic_a18088bcacb3c6080c08c2ea105313f65}\label{classUltrasonic_a18088bcacb3c6080c08c2ea105313f65}} 
+\index{Ultrasonic@{Ultrasonic}!running@{running}}
+\index{running@{running}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{running}{running}}
+{\footnotesize\ttfamily int Ultrasonic\+::running = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classUltrasonic_a90f3f5b30f09038811bcc5231efdc619}\label{classUltrasonic_a90f3f5b30f09038811bcc5231efdc619}} 
+\index{Ultrasonic@{Ultrasonic}!trig@{trig}}
+\index{trig@{trig}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{trig}{trig}}
+{\footnotesize\ttfamily int Ultrasonic\+::trig\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classUltrasonic_a00cb643880cff1ac6b3b429e92c5bba9}\label{classUltrasonic_a00cb643880cff1ac6b3b429e92c5bba9}} 
+\index{Ultrasonic@{Ultrasonic}!ultrasonic\+Cb@{ultrasonic\+Cb}}
+\index{ultrasonic\+Cb@{ultrasonic\+Cb}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{ultrasonic\+Cb}{ultrasonicCb}}
+{\footnotesize\ttfamily \hyperlink{classUltrasonicCallback}{Ultrasonic\+Callback}$\ast$ Ultrasonic\+::ultrasonic\+Cb = N\+U\+LL\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classUltrasonic_a830f5b7f4e3de362e1b90eb5d6f3844b}\label{classUltrasonic_a830f5b7f4e3de362e1b90eb5d6f3844b}} 
+\index{Ultrasonic@{Ultrasonic}!ultra\+Thread@{ultra\+Thread}}
+\index{ultra\+Thread@{ultra\+Thread}!Ultrasonic@{Ultrasonic}}
+\subsubsection{\texorpdfstring{ultra\+Thread}{ultraThread}}
+{\footnotesize\ttfamily std\+::thread$\ast$ Ultrasonic\+::ultra\+Thread = N\+U\+LL\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ultrasonic_8h}{ultrasonic.\+h}\item 
+src/\hyperlink{ultrasonic_8cpp}{ultrasonic.\+cpp}\end{DoxyCompactItemize}

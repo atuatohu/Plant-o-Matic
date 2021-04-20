@@ -1,0 +1,84 @@
+\hypertarget{classJSONDHT11CallbackTemp}{}\section{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp Class Reference}
+\label{classJSONDHT11CallbackTemp}\index{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp@{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp}}
+
+
+Inheritance diagram for J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classJSONDHT11CallbackTemp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJSONDHT11CallbackTemp__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classJSONDHT11CallbackTemp_a53d61d27b86356366484b55973182cda}{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp} (\hyperlink{classDHT11SampleCallBack}{D\+H\+T11\+Sample\+Call\+Back} $\ast$cb)
+\item 
+virtual std\+::string \hyperlink{classJSONDHT11CallbackTemp_afe3fed3115bf659bdeb92463c7965dac}{get\+J\+S\+O\+N\+String} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDHT11SampleCallBack}{D\+H\+T11\+Sample\+Call\+Back} $\ast$ \hyperlink{classJSONDHT11CallbackTemp_aed9fd605ded1a4cf2b9d5b4bdf5071be}{dht11}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Callback handler which returns data to the nginx server. The current temperature and the timestamp is transmitted to nginx and the javascript application. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJSONDHT11CallbackTemp_a53d61d27b86356366484b55973182cda}\label{classJSONDHT11CallbackTemp_a53d61d27b86356366484b55973182cda}} 
+\index{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp@{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp}!J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp@{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp}}
+\index{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp@{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp}!J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp@{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp}}
+\subsubsection{\texorpdfstring{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp()}{JSONDHT11CallbackTemp()}}
+{\footnotesize\ttfamily J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp\+::\+J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp (\begin{DoxyParamCaption}\item[{\hyperlink{classDHT11SampleCallBack}{D\+H\+T11\+Sample\+Call\+Back} $\ast$}]{cb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classJSONDHT11CallbackTemp_afe3fed3115bf659bdeb92463c7965dac}\label{classJSONDHT11CallbackTemp_afe3fed3115bf659bdeb92463c7965dac}} 
+\index{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp@{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp}!get\+J\+S\+O\+N\+String@{get\+J\+S\+O\+N\+String}}
+\index{get\+J\+S\+O\+N\+String@{get\+J\+S\+O\+N\+String}!J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp@{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp}}
+\subsubsection{\texorpdfstring{get\+J\+S\+O\+N\+String()}{getJSONString()}}
+{\footnotesize\ttfamily virtual std\+::string J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp\+::get\+J\+S\+O\+N\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Needs to return the payload data sent to the web browser. Use the J\+S\+O\+N\+Generator to create the J\+S\+ON or use an external json generator. \begin{DoxyReturn}{Returns}
+J\+S\+ON data 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classJSONCGIHandler_1_1GETCallback_a2367bf5a5912e9e5599ee464e0846255}{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+G\+E\+T\+Callback}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJSONDHT11CallbackTemp_afe3fed3115bf659bdeb92463c7965dac_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classJSONDHT11CallbackTemp_aed9fd605ded1a4cf2b9d5b4bdf5071be}\label{classJSONDHT11CallbackTemp_aed9fd605ded1a4cf2b9d5b4bdf5071be}} 
+\index{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp@{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp}!dht11@{dht11}}
+\index{dht11@{dht11}!J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp@{J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp}}
+\subsubsection{\texorpdfstring{dht11}{dht11}}
+{\footnotesize\ttfamily \hyperlink{classDHT11SampleCallBack}{D\+H\+T11\+Sample\+Call\+Back}$\ast$ J\+S\+O\+N\+D\+H\+T11\+Callback\+Temp\+::dht11\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{main_8cpp}{main.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="pump::start" name="pump::start">
+<area shape="rect" id="node2" href="$classpump.html#a058e2690d8022501b5dfdc4ca646cb7c" title="pump::run" alt="" coords="141,5,221,32"/>
+<area shape="rect" id="node3" href="$classpump.html#af6264b2a6b6e66ed1027565a44561647" title="pump::onoff" alt="" coords="269,5,360,32"/>
+</map>

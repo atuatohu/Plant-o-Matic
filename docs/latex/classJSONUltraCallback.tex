@@ -1,0 +1,84 @@
+\hypertarget{classJSONUltraCallback}{}\section{J\+S\+O\+N\+Ultra\+Callback Class Reference}
+\label{classJSONUltraCallback}\index{J\+S\+O\+N\+Ultra\+Callback@{J\+S\+O\+N\+Ultra\+Callback}}
+
+
+Inheritance diagram for J\+S\+O\+N\+Ultra\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classJSONUltraCallback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for J\+S\+O\+N\+Ultra\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJSONUltraCallback__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classJSONUltraCallback_a3b9a7da41a3dc2b73abb3450fb2399e4}{J\+S\+O\+N\+Ultra\+Callback} (\hyperlink{classUltraSonicSensorSampleCallback}{Ultra\+Sonic\+Sensor\+Sample\+Callback} $\ast$cb)
+\item 
+virtual std\+::string \hyperlink{classJSONUltraCallback_abb097f82255b74c56370b90bc06d81da}{get\+J\+S\+O\+N\+String} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUltraSonicSensorSampleCallback}{Ultra\+Sonic\+Sensor\+Sample\+Callback} $\ast$ \hyperlink{classJSONUltraCallback_aed520f877003033dff14d7bd636683dc}{ultra}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Callback handler which returns data to the nginx server. The current water level and the timestamp is transmitted to nginx and the javascript application. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJSONUltraCallback_a3b9a7da41a3dc2b73abb3450fb2399e4}\label{classJSONUltraCallback_a3b9a7da41a3dc2b73abb3450fb2399e4}} 
+\index{J\+S\+O\+N\+Ultra\+Callback@{J\+S\+O\+N\+Ultra\+Callback}!J\+S\+O\+N\+Ultra\+Callback@{J\+S\+O\+N\+Ultra\+Callback}}
+\index{J\+S\+O\+N\+Ultra\+Callback@{J\+S\+O\+N\+Ultra\+Callback}!J\+S\+O\+N\+Ultra\+Callback@{J\+S\+O\+N\+Ultra\+Callback}}
+\subsubsection{\texorpdfstring{J\+S\+O\+N\+Ultra\+Callback()}{JSONUltraCallback()}}
+{\footnotesize\ttfamily J\+S\+O\+N\+Ultra\+Callback\+::\+J\+S\+O\+N\+Ultra\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{classUltraSonicSensorSampleCallback}{Ultra\+Sonic\+Sensor\+Sample\+Callback} $\ast$}]{cb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classJSONUltraCallback_abb097f82255b74c56370b90bc06d81da}\label{classJSONUltraCallback_abb097f82255b74c56370b90bc06d81da}} 
+\index{J\+S\+O\+N\+Ultra\+Callback@{J\+S\+O\+N\+Ultra\+Callback}!get\+J\+S\+O\+N\+String@{get\+J\+S\+O\+N\+String}}
+\index{get\+J\+S\+O\+N\+String@{get\+J\+S\+O\+N\+String}!J\+S\+O\+N\+Ultra\+Callback@{J\+S\+O\+N\+Ultra\+Callback}}
+\subsubsection{\texorpdfstring{get\+J\+S\+O\+N\+String()}{getJSONString()}}
+{\footnotesize\ttfamily virtual std\+::string J\+S\+O\+N\+Ultra\+Callback\+::get\+J\+S\+O\+N\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Needs to return the payload data sent to the web browser. Use the J\+S\+O\+N\+Generator to create the J\+S\+ON or use an external json generator. \begin{DoxyReturn}{Returns}
+J\+S\+ON data 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classJSONCGIHandler_1_1GETCallback_a2367bf5a5912e9e5599ee464e0846255}{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+G\+E\+T\+Callback}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJSONUltraCallback_abb097f82255b74c56370b90bc06d81da_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classJSONUltraCallback_aed520f877003033dff14d7bd636683dc}\label{classJSONUltraCallback_aed520f877003033dff14d7bd636683dc}} 
+\index{J\+S\+O\+N\+Ultra\+Callback@{J\+S\+O\+N\+Ultra\+Callback}!ultra@{ultra}}
+\index{ultra@{ultra}!J\+S\+O\+N\+Ultra\+Callback@{J\+S\+O\+N\+Ultra\+Callback}}
+\subsubsection{\texorpdfstring{ultra}{ultra}}
+{\footnotesize\ttfamily \hyperlink{classUltraSonicSensorSampleCallback}{Ultra\+Sonic\+Sensor\+Sample\+Callback}$\ast$ J\+S\+O\+N\+Ultra\+Callback\+::ultra\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{main_8cpp}{main.\+cpp}\end{DoxyCompactItemize}

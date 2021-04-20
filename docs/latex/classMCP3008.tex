@@ -1,0 +1,206 @@
+\hypertarget{classMCP3008}{}\section{M\+C\+P3008 Class Reference}
+\label{classMCP3008}\index{M\+C\+P3008@{M\+C\+P3008}}
+
+
+{\ttfamily \#include $<$M\+C\+P3008.\+h$>$}
+
+
+
+Collaboration diagram for M\+C\+P3008\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classMCP3008__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMCP3008_a31a9bfe04898e565154413cf17329859}{M\+C\+P3008} ()
+\item 
+\hyperlink{classMCP3008_a96d9ef77d32f0c4efd3b942c40322aeb}{$\sim$\+M\+C\+P3008} ()
+\item 
+void \hyperlink{classMCP3008_ad1893b9dd4dbbc2efbb57843871596fc}{set\+\_\+channel} (uint8\+\_\+t channel)
+\item 
+void \hyperlink{classMCP3008_abe098bf3c4c2e6a803c53297d84e3c1c}{set\+Call\+Back} (\hyperlink{classMCP3008callback}{M\+C\+P3008callback} $\ast$cb)
+\item 
+void \hyperlink{classMCP3008_a839bea8d430ee0852620c151c4467450}{start} ()
+\item 
+void \hyperlink{classMCP3008_add8fa4dafb68c227cd1ed269bd30603f}{stop} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classMCP3008_a583bf94e4bb38d945819914c9a2321ba}{read\+Data} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classMCP3008_a8e243711492e50dd4327050ffae8851d}{run} (\hyperlink{classMCP3008}{M\+C\+P3008} $\ast$mcp3008)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{classMCP3008_a9089ac2e245b158411670c802e6ea404}{adc\+\_\+channel}
+\item 
+\hyperlink{classMCP3008callback}{M\+C\+P3008callback} $\ast$ \hyperlink{classMCP3008_a602724521657fd93241ba51c8dd83e74}{mcp3008callback} = N\+U\+LL
+\item 
+int \hyperlink{classMCP3008_a81354e1933a79bcb9f1d01c0e16566f0}{running} = 0
+\item 
+std\+::thread $\ast$ \hyperlink{classMCP3008_ab1318bf3a8ac2bdf31b62451d29e1c90}{adc\+Thread} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class reads data from \hyperlink{classMCP3008}{M\+C\+P3008} A\+DC in the background and calls a callback whenever data is available 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMCP3008_a31a9bfe04898e565154413cf17329859}\label{classMCP3008_a31a9bfe04898e565154413cf17329859}} 
+\index{M\+C\+P3008@{M\+C\+P3008}!M\+C\+P3008@{M\+C\+P3008}}
+\index{M\+C\+P3008@{M\+C\+P3008}!M\+C\+P3008@{M\+C\+P3008}}
+\subsubsection{\texorpdfstring{M\+C\+P3008()}{MCP3008()}}
+{\footnotesize\ttfamily M\+C\+P3008\+::\+M\+C\+P3008 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+clas constructor \mbox{\Hypertarget{classMCP3008_a96d9ef77d32f0c4efd3b942c40322aeb}\label{classMCP3008_a96d9ef77d32f0c4efd3b942c40322aeb}} 
+\index{M\+C\+P3008@{M\+C\+P3008}!````~M\+C\+P3008@{$\sim$\+M\+C\+P3008}}
+\index{````~M\+C\+P3008@{$\sim$\+M\+C\+P3008}!M\+C\+P3008@{M\+C\+P3008}}
+\subsubsection{\texorpdfstring{$\sim$\+M\+C\+P3008()}{~MCP3008()}}
+{\footnotesize\ttfamily M\+C\+P3008\+::$\sim$\+M\+C\+P3008 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+clas destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMCP3008_a583bf94e4bb38d945819914c9a2321ba}\label{classMCP3008_a583bf94e4bb38d945819914c9a2321ba}} 
+\index{M\+C\+P3008@{M\+C\+P3008}!read\+Data@{read\+Data}}
+\index{read\+Data@{read\+Data}!M\+C\+P3008@{M\+C\+P3008}}
+\subsubsection{\texorpdfstring{read\+Data()}{readData()}}
+{\footnotesize\ttfamily int M\+C\+P3008\+::read\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMCP3008_a583bf94e4bb38d945819914c9a2321ba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMCP3008_a8e243711492e50dd4327050ffae8851d}\label{classMCP3008_a8e243711492e50dd4327050ffae8851d}} 
+\index{M\+C\+P3008@{M\+C\+P3008}!run@{run}}
+\index{run@{run}!M\+C\+P3008@{M\+C\+P3008}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void M\+C\+P3008\+::run (\begin{DoxyParamCaption}\item[{\hyperlink{classMCP3008}{M\+C\+P3008} $\ast$}]{mcp3008 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classMCP3008_a8e243711492e50dd4327050ffae8851d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMCP3008_a8e243711492e50dd4327050ffae8851d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMCP3008_ad1893b9dd4dbbc2efbb57843871596fc}\label{classMCP3008_ad1893b9dd4dbbc2efbb57843871596fc}} 
+\index{M\+C\+P3008@{M\+C\+P3008}!set\+\_\+channel@{set\+\_\+channel}}
+\index{set\+\_\+channel@{set\+\_\+channel}!M\+C\+P3008@{M\+C\+P3008}}
+\subsubsection{\texorpdfstring{set\+\_\+channel()}{set\_channel()}}
+{\footnotesize\ttfamily void M\+C\+P3008\+::set\+\_\+channel (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+function that allows to set channel of A\+DC from 0 to 7 Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{classMCP3008_ad1893b9dd4dbbc2efbb57843871596fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMCP3008_abe098bf3c4c2e6a803c53297d84e3c1c}\label{classMCP3008_abe098bf3c4c2e6a803c53297d84e3c1c}} 
+\index{M\+C\+P3008@{M\+C\+P3008}!set\+Call\+Back@{set\+Call\+Back}}
+\index{set\+Call\+Back@{set\+Call\+Back}!M\+C\+P3008@{M\+C\+P3008}}
+\subsubsection{\texorpdfstring{set\+Call\+Back()}{setCallBack()}}
+{\footnotesize\ttfamily void M\+C\+P3008\+::set\+Call\+Back (\begin{DoxyParamCaption}\item[{\hyperlink{classMCP3008callback}{M\+C\+P3008callback} $\ast$}]{cb }\end{DoxyParamCaption})}
+
+function that allows to threads to set callbacks Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{classMCP3008_abe098bf3c4c2e6a803c53297d84e3c1c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMCP3008_a839bea8d430ee0852620c151c4467450}\label{classMCP3008_a839bea8d430ee0852620c151c4467450}} 
+\index{M\+C\+P3008@{M\+C\+P3008}!start@{start}}
+\index{start@{start}!M\+C\+P3008@{M\+C\+P3008}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void M\+C\+P3008\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Starts the data acquisition in the background and the callback is called with new samples Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMCP3008_a839bea8d430ee0852620c151c4467450_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classMCP3008_a839bea8d430ee0852620c151c4467450_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMCP3008_add8fa4dafb68c227cd1ed269bd30603f}\label{classMCP3008_add8fa4dafb68c227cd1ed269bd30603f}} 
+\index{M\+C\+P3008@{M\+C\+P3008}!stop@{stop}}
+\index{stop@{stop}!M\+C\+P3008@{M\+C\+P3008}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void M\+C\+P3008\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Stops the data acquisition Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{classMCP3008_add8fa4dafb68c227cd1ed269bd30603f_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{classMCP3008_a9089ac2e245b158411670c802e6ea404}\label{classMCP3008_a9089ac2e245b158411670c802e6ea404}} 
+\index{M\+C\+P3008@{M\+C\+P3008}!adc\+\_\+channel@{adc\+\_\+channel}}
+\index{adc\+\_\+channel@{adc\+\_\+channel}!M\+C\+P3008@{M\+C\+P3008}}
+\subsubsection{\texorpdfstring{adc\+\_\+channel}{adc\_channel}}
+{\footnotesize\ttfamily uint8\+\_\+t M\+C\+P3008\+::adc\+\_\+channel\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMCP3008_ab1318bf3a8ac2bdf31b62451d29e1c90}\label{classMCP3008_ab1318bf3a8ac2bdf31b62451d29e1c90}} 
+\index{M\+C\+P3008@{M\+C\+P3008}!adc\+Thread@{adc\+Thread}}
+\index{adc\+Thread@{adc\+Thread}!M\+C\+P3008@{M\+C\+P3008}}
+\subsubsection{\texorpdfstring{adc\+Thread}{adcThread}}
+{\footnotesize\ttfamily std\+::thread$\ast$ M\+C\+P3008\+::adc\+Thread = N\+U\+LL\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMCP3008_a602724521657fd93241ba51c8dd83e74}\label{classMCP3008_a602724521657fd93241ba51c8dd83e74}} 
+\index{M\+C\+P3008@{M\+C\+P3008}!mcp3008callback@{mcp3008callback}}
+\index{mcp3008callback@{mcp3008callback}!M\+C\+P3008@{M\+C\+P3008}}
+\subsubsection{\texorpdfstring{mcp3008callback}{mcp3008callback}}
+{\footnotesize\ttfamily \hyperlink{classMCP3008callback}{M\+C\+P3008callback}$\ast$ M\+C\+P3008\+::mcp3008callback = N\+U\+LL\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMCP3008_a81354e1933a79bcb9f1d01c0e16566f0}\label{classMCP3008_a81354e1933a79bcb9f1d01c0e16566f0}} 
+\index{M\+C\+P3008@{M\+C\+P3008}!running@{running}}
+\index{running@{running}!M\+C\+P3008@{M\+C\+P3008}}
+\subsubsection{\texorpdfstring{running}{running}}
+{\footnotesize\ttfamily int M\+C\+P3008\+::running = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{MCP3008_8h}{M\+C\+P3008.\+h}\item 
+src/\hyperlink{MCP3008_8cpp}{M\+C\+P3008.\+cpp}\end{DoxyCompactItemize}

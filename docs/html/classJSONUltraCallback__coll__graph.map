@@ -1,0 +1,5 @@
+<map id="JSONUltraCallback" name="JSONUltraCallback">
+<area shape="rect" id="node2" href="$classJSONCGIHandler_1_1GETCallback.html" title="{JSONCGIHandler::GETCallback\n||+ getJSONString()\l+ getContentType()\l}" alt="" coords="5,132,219,224"/>
+<area shape="rect" id="node3" href="$classUltraSonicSensorSampleCallback.html" title="{UltraSonicSensorSampleCallback\n|+ waterlevel\l|+ hasSample()\l+ hasSample()\l}" alt="" coords="243,132,461,224"/>
+<area shape="rect" id="node4" href="$classUltrasonicCallback.html" title="{UltrasonicCallback\n||+ hasSample()\l}" alt="" coords="286,5,418,83"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Ultrasonic::start" name="Ultrasonic::start">
+<area shape="rect" id="node2" href="$classUltrasonic.html#ac1df91b01624260ce4c19126e3aa0160" title="Ultrasonic::run" alt="" coords="168,35,275,61"/>
+<area shape="rect" id="node3" href="$classUltrasonic.html#a7af95864d8b2b58d56e661e0fcb4ca8b" title="Ultrasonic::getDistanceCM" alt="" coords="323,5,503,32"/>
+<area shape="rect" id="node4" href="$classUltrasonicCallback.html#aded93e2bea7669f1f225f8b35a085052" title="UltrasonicCallback\l::hasSample" alt="" coords="347,57,479,98"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="JSONDHT11CallbackTemp" name="JSONDHT11CallbackTemp">
+<area shape="rect" id="node2" href="$classJSONCGIHandler_1_1GETCallback.html" title="{JSONCGIHandler::GETCallback\n||+ getJSONString()\l+ getContentType()\l}" alt="" coords="5,147,219,239"/>
+<area shape="rect" id="node3" href="$classDHT11SampleCallBack.html" title="{DHT11SampleCallBack\n|+ humidity\l+ temperature\l+ t\l|+ hasSample()\l+ hasSample()\l}" alt="" coords="243,132,405,253"/>
+<area shape="rect" id="node4" href="$classDHT11callback.html" title="{DHT11callback\n||+ hasSample()\l}" alt="" coords="268,5,380,83"/>
+</map>

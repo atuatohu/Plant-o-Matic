@@ -1,0 +1,172 @@
+Table of Contents
+
+~\newline
+ 
+
+\href{https://github.com/atuatohu/Plant-o-Matic}{\tt }
+
+\subsection*{Plant-\/o-\/\+Matic}
+
+Automated plant care and monitoring system using Raspberry Pi Model 3 B+ ~\newline
+ \href{https://github.com/atuatohu/Plant-o-Matic}{\tt {\bfseries Explore the docs »}} ~\newline
+ ~\newline
+ \href{https://github.com/atuatohu/Plant-o-Matic}{\tt View Demo} · \href{https://github.com/atuatohu/Plant-o-Matic/issues}{\tt Report Bug or Request a Feature} 
+
+\href{https://www.youtube.com/watch?v=Qye0ZrwYpE0}{\tt ~~~  Hackaday page}  
+
+$<$details open=\char`\"{}open\char`\"{}$>$
+
+
+\begin{DoxyEnumerate}
+\item \href{#about}{\tt About} 
+\item \href{#hardware}{\tt Hardware} 
+\item \href{#how-to-start}{\tt How to Start} 
+\item \href{#how-to-start}{\tt Usage} 
+\item \href{#roadmap}{\tt Roadmap} 
+\item \href{#contributing}{\tt Contributing} 
+\item \href{#license}{\tt License} 
+\item \href{#contact}{\tt Contact} 
+\item \href{#references}{\tt References} 
+\end{DoxyEnumerate}$<$/details$>$
+
+{\bfseries Plant-\/o-\/\+Matic} is an automated plant care and monitoring system implemented on Raspberry Pi Model 3 B+ with the help of C++, nginx and Fast\+C\+GI.
+
+For some people plants are parts of their families and taking care of their plant is as crucial as for other people to take care of their pets. For others, they are something they keep forgetting about because of the busy schedule or heaps of thoughts.\+If you belong to the latter category, this project is for you! With it\textquotesingle{}s help, it is possible not just to grow a plant, but also monitor it\textquotesingle{}s state and other related data.
+
+System senses the soil moisture and the surrounding temperature and humidity. With the help of ultrasonic sensor, it is possible to observe the water level of your home reservoir to see if the water is enough to feed your plant while you are out of home. If the soil is gets dry and there is appropriate water level, water pump will automatically start and irrigate the plant.
+
+Data monitoring is done in a web application, which is hosted on the Raspberry Pi.
+
+Before purchasing any device and starting to work with it, it is important to check its datasheet/manual. For this project, we\textquotesingle{}ve collected this information for each device. You can check it in the \href{https://github.com/atuatohu/Plant-o-Matic/tree/main/Materials/Hardware}{\tt Hardware} folder.
+
+
+\begin{DoxyItemize}
+\item \href{https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/}{\tt Raspberry Pi 3 Model B+}
+\item \href{https://www.amazon.co.uk/SanDisk-microSDHC-Adapter-Performance-SDSQUA4-032G-GN6MA/dp/B08GY9NYRM/ref=sr_1_3?dchild=1&keywords=micro+sd&qid=1618756194&sr=8-3}{\tt 32\+GB Micro\+SD}
+\item \href{https://thepihut.com/products/adafruit-mcp3008-8-channel-10-bit-adc-with-spi-interface}{\tt M\+C\+P3008 A\+DC}
+\end{DoxyItemize}
+
+\href{https://thepihut.com/products/adafruit-mcp3008-8-channel-10-bit-adc-with-spi-interface}{\tt ~~~ }
+
+
+\begin{DoxyItemize}
+\item \href{https://thepihut.com/products/capacitive-soil-moisture-sensor}{\tt Capacitive Soil Moisture Sensor v1.\+2}
+\end{DoxyItemize}
+
+\href{https://thepihut.com/products/capacitive-soil-moisture-sensor}{\tt ~~~ }
+
+
+\begin{DoxyItemize}
+\item \href{https://thepihut.com/products/ultrasonic-distance-sensor-hcsr04}{\tt H\+C-\/\+S\+R04 Ultrasonic sensor}
+\end{DoxyItemize}
+
+\href{https://thepihut.com/products/ultrasonic-distance-sensor-hcsr04}{\tt ~~~ }
+
+
+\begin{DoxyItemize}
+\item \href{https://www.amazon.co.uk/gp/product/B01N6PB489/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1}{\tt D\+H\+T22 Temperature and Humidity Sensor}
+\end{DoxyItemize}
+
+\href{https://www.amazon.co.uk/gp/product/B01N6PB489/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1}{\tt ~~~ }
+
+
+\begin{DoxyItemize}
+\item \href{https://www.amazon.co.uk/gp/product/B0744FWNFR/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&psc=1}{\tt 6-\/12V Water pump}
+\end{DoxyItemize}
+
+\href{https://www.amazon.co.uk/gp/product/B0744FWNFR/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&psc=1}{\tt ~~~ }
+
+
+\begin{DoxyItemize}
+\item \href{https://www.mouser.co.uk/ProductDetail/TRACO-Power/TRA-1-0512?qs=ckJk83FOD0VZ5q6Ozn6vsw==&utm_source=OEMSECRETS&utm_medium=aggregator&utm_campaign=TRA+1-0512&utm_term=TRA+10512&utm_content=TRACO+Power}{\tt 5 to 12 V Isolated D\+C/\+DC Converter}
+\end{DoxyItemize}
+
+\href{https://www.mouser.co.uk/ProductDetail/TRACO-Power/TRA-1-0512?qs=ckJk83FOD0VZ5q6Ozn6vsw==&utm_source=OEMSECRETS&utm_medium=aggregator&utm_campaign=TRA+1-0512&utm_term=TRA+10512&utm_content=TRACO+Power}{\tt ~~~ }
+
+The interconnection diagram\+: 
+
+Before downloading the project, check if the following prerequisites are present on your Raspberry Pi\+:
+
+
+\begin{DoxyItemize}
+\item \href{http://wiringpi.com/}{\tt wiring\+Pi}
+\end{DoxyItemize}
+
+To install\+: 
+\begin{DoxyCode}
+sudo apt-get install wiringpi
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item \href{https://www.nginx.com/}{\tt nginx}
+\end{DoxyItemize}
+
+To install\+: 
+\begin{DoxyCode}
+sudo apt install nginx
+\end{DoxyCode}
+ Reload the configuration file, if changes were made\+: 
+\begin{DoxyCode}
+sudo /etc/init.d/nginx reload
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item \href{https://cmake.org/}{\tt cmake}
+\item \href{https://git-scm.com/}{\tt git}
+\item S\+PI interface Enabled
+\end{DoxyItemize}
+
+If not, please visit our \href{https://github.com/atuatohu/Plant-o-Matic/wiki/Installation-guide}{\tt wiki page} for detailed instructions.
+
+To built\+: 
+\begin{DoxyCode}
+cmake . 
+make
+\end{DoxyCode}
+ To run\+: Run it with the command\+: 
+\begin{DoxyCode}
+./Plant
+\end{DoxyCode}
+ To test\+: 
+\begin{DoxyCode}
+ctest
+\end{DoxyCode}
+ 
+
+Start Plant {\ttfamily Plant} in the background with\+: 
+\begin{DoxyCode}
+nohup ./Plant &
+\end{DoxyCode}
+ which creates sockets under {\ttfamily /tmp/soilsocket}, {\ttfamily /tmp/tempsocket},{\ttfamily /tmp/humsocket}, {\ttfamily /tmp/ultrasonic}to communicate with the fastcgi server.
+
+See the \href{https://github.com/atuatohu/Plant-o-Matic/issues}{\tt open issues} for a list of proposed features (and known issues).
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are {\bfseries greatly appreciated}.
+
+
+\begin{DoxyEnumerate}
+\item Fork the Project
+\item Create your Feature Branch ({\ttfamily git checkout -\/b feature/\+Amazing\+Feature})
+\item Commit your Changes ({\ttfamily git commit -\/m \textquotesingle{}Add some Amazing\+Feature\textquotesingle{}})
+\item Push to the Branch ({\ttfamily git push origin feature/\+Amazing\+Feature})
+\item Open a Pull Request
+\end{DoxyEnumerate}
+
+Distributed under the M\+IT License. See \href{https://github.com/atuatohu/Plant-o-Matic/blob/main/LICENSE}{\tt L\+I\+C\+E\+N\+SE} for more information.
+
+\href{https://github.com/Aigerim98}{\tt Aigerim Abdurakhmanova}
+
+\href{https://github.com/2624480S}{\tt Adil Shakeel}
+
+\href{https://github.com/atuatohu}{\tt Medet Kassymov}
+
+Project Link\+: \href{https://github.com/atuatohu/Plant-o-Matic}{\tt https\+://github.\+com/atuatohu/\+Plant-\/o-\/\+Matic}
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/berndporr/json_fastcgi_web_api}{\tt j\+Query $<$--$>$ C++ fastcgi web A\+PI}
+\item \href{https://github.com/othneildrew/Best-README-Template}{\tt R\+E\+A\+D\+ME Template}
+\item \href{https://www.circuitbasics.com/how-to-set-up-the-dht11-humidity-sensor-on-the-raspberry-pi/}{\tt D\+H\+T11}
+\item \href{http://www.piprojects.xyz/ultrasonic-distance-sensor/}{\tt H\+C-\/\+S\+R04}
+\item \href{https://github.com/berndporr/rpi_AD7705_daq}{\tt Callbacks and threads} 
+\end{DoxyItemize}
