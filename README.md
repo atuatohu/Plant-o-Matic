@@ -142,7 +142,7 @@ To test:
 ctest
 ```
 ### Starting FastCGI Server
-Start Plant `Plant` in the background with:
+Start `Plant` in the background with:
 ```
 nohup ./Plant &
 ```
