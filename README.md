@@ -65,6 +65,13 @@ To test:
 ```
 ctest
 ```
+## FastCGI Server
+Start Plant `Plant` in the background with:
+```
+nohup ./Plant &
+```
+which creates sockets under `/tmp/soilsocket`, `/tmp/tempsocket`,`/tmp/humsocket`, `/tmp/ultrasonic`to communicate with the fastcgi server
+
 ## Hardware
 
 Before purchasing any device and starting to work with it, it is important to check its datasheet/manual.
