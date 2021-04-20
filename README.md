@@ -118,11 +118,13 @@ The interconnection diagram:
 Before downloading the project, check if the following prerequisites are present on your Raspberry Pi:
 
 * [wiringPi](http://wiringpi.com/)
+
 To install:
 ```
 sudo apt-get install wiringpi
 ```
 * [nginx](https://www.nginx.com/)
+
 To install:
 ```
 sudo apt install nginx
