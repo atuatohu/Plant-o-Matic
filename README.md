@@ -50,18 +50,18 @@ System senses the soil moisture and the surrounding temperature and humidity. Wi
 
 Data monitoring is done in a web application, which is hosted on the Raspberry Pi.
 
-## Building:
+## Usage:
 To built:
 ```
 cmake . 
 make
 ```
-## To run:
+To run:
 Run it with the command:
 ```
 ./Plant
 ```
-## To test:
+To test:
 ```
 ctest
 ```
