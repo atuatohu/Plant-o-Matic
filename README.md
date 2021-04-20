@@ -184,7 +184,6 @@ Project Link: [https://github.com/atuatohu/Plant-o-Matic](https://github.com/atu
 <!-- REFERENCES -->
 ## References
 * [jQuery <--> C++ fastcgi web API](https://github.com/berndporr/json_fastcgi_web_api)
-* 
 * [README Template](https://github.com/othneildrew/Best-README-Template) 
 * [DHT11] (https://www.circuitbasics.com/how-to-set-up-the-dht11-humidity-sensor-on-the-raspberry-pi/)
 * [HC-SR04] (http://www.piprojects.xyz/ultrasonic-distance-sensor/)
