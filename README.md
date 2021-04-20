@@ -50,6 +50,21 @@ System senses the soil moisture and the surrounding temperature and humidity. Wi
 
 Data monitoring is done in a web application, which is hosted on the Raspberry Pi.
 
+## Building:
+To built:
+```
+cmake . 
+make
+```
+## To run:
+Run it with the command:
+```
+./Plant
+```
+## To test:
+```
+ctest
+```
 ## Hardware
 
 Before purchasing any device and starting to work with it, it is important to check its datasheet/manual.
