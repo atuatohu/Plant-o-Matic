@@ -13,12 +13,12 @@
     <a href="https://atuatohu.github.io/Plant-o-Matic/html/index.html"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/atuatohu/Plant-o-Matic">View Demo</a>
+    <a href="https://www.youtube.com/watch?v=Qye0ZrwYpE0">View Demo</a>
     ·
     <a href="https://github.com/atuatohu/Plant-o-Matic/issues">Report Bug or Request a Feature</a>
   </p>
   <p align="center">
-  <a href="https://www.youtube.com/watch?v=Qye0ZrwYpE0">
+  <a href="https://www.youtube.com/channel/UCmUTqd5tyZlFaWaG_I7B9gQ">
     <img src="https://github.com/atuatohu/Plant-o-Matic/blob/main/Materials/svg_logos/YouTube.svg" width="45">&nbsp;&nbsp;&nbsp;
     <br />
     <a href="https://hackaday.io/project/179266-plant-o-matic">Hackaday page</a>
